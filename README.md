@@ -11,13 +11,9 @@
 
 </div>
 
----
-
 > Come join the dark side, we have cookies.
 
 This colorscheme is ported from [doom-emacs' doom-one].
-
-> **IMPORTANT:** this colorscheme requires Neovim >= 0.5 to work.
 
 ## Features
 
@@ -32,6 +28,8 @@ Packer
 ```vim
 use 'NTBBloodbath/doom-one.nvim'
 ```
+
+> **IMPORTANT:** this colorscheme requires Neovim >= 0.5 to work.
 
 ## Options
 
