@@ -7,7 +7,7 @@
 
 -- Helpers {{{
 
-require('colors.utils')
+require('utils')
 
 local g = vim.g
 local fn = vim.fn
