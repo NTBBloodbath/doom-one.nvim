@@ -484,6 +484,21 @@ high_link('dashboardFooter', 'dashboardHeader')
 
 -- }}}
         
+-- WhichKey {{{
+
+local whichkey = {
+    WhichKey = { fg = blue },
+    WhichKeyGroup = { fg = magenta },
+    WhichKeyDesc = { fg = magenta },
+    WhichKeySeparator = { fg = base5 },
+    WhichKeyFloat = { bg = base2 },
+    WhichKeyValue = { fg = grey },
+}
+
+apply_highlight(whichkey)
+
+-- }}}
+        
 -- }}}
 
 -- LSP {{{
