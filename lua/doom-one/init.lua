@@ -471,6 +471,19 @@ high_link('NvimTreeOpenedFolderName', 'NvimTreeFolderName')
 
 -- }}}
 
+-- Dashboard {{{
+
+local dashboard = {
+    dashboardHeader = { fg = '#586268' },
+    dashboardCenter = { fg = blue },
+    dashboardShortcut = { fg = '#9788b9' },
+}
+
+apply_highlight(dashboard)
+high_link('dashboardFooter', 'dashboardHeader')
+
+-- }}}
+        
 -- }}}
 
 -- LSP {{{
