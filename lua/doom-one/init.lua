@@ -7,7 +7,7 @@
 
 -- Helpers {{{
 
-require('utils')
+require('colors.utils')
 
 -- }}}
 
@@ -26,6 +26,8 @@ end
 if vim.g.doom_one_transparent_background == nil then
 	vim.g.doom_one_transparent_background = false
 end
+
+local transparent_bg = vim.g.doom_one_transparent_background
 
 -- }}}
 
@@ -58,8 +60,8 @@ end
 
 local base0 = '#1B2229'
 local base1 = '#1c1f24'
-local base2 = '#202328'
-local base3 = '#23272e'
+-- local base2 = '#202328'
+-- local base3 = '#23272e'
 local base4 = '#3f444a'
 local base5 = '#5B6268'
 local base6 = '#73797e'
@@ -71,7 +73,6 @@ local grey = base4
 local red = '#ff6c6b'
 local orange = '#da8548'
 local green = '#98be65'
-local teal = '#4db5bd'
 local yellow = '#ECBE7B'
 local blue = '#51afef'
 local dark_blue = '#2257A0'
@@ -79,7 +80,6 @@ local magenta = '#c678dd'
 local light_magenta = Lighten(magenta, 0.4)
 local violet = '#a9a1e1'
 local cyan = '#46D9FF'
-local dark_cyan = '#5699AF'
 local white = '#efefef'
 
 local bg = '#282c34'
@@ -87,7 +87,6 @@ local bg_alt = '#21242b'
 local bg_highlight = '#21252a'
 local bg_popup = '#3E4556'
 local bg_statusline = bg_popup
-local bg_selection = dark_blue
 local bg_highlighted = '#4A4A45'
 
 local fg = '#bbc2cf'
@@ -103,12 +102,12 @@ local diff_info_bg1 = Mix('#D8EEFD', bg, 0.8)
 local diff_add_fg = green
 local diff_add_fg0 = Mix(green, fg, 0.4)
 local diff_add_bg0 = Mix('#506d5b', bg, 0.4)
-local diff_add_bg1 = Mix('#acf2bd', bg, 0.6)
+-- local diff_add_bg1 = Mix('#acf2bd', bg, 0.6)
 local diff_add_bg2 = Mix('#acf2bd', bg, 0.8)
 
 local gh_danger_fg = red
 local gh_danger_fg0 = Mix(red, fg, 0.6)
-local gh_danger_bg0 = Mix('#ffdce0', bg, 0.6)
+-- local gh_danger_bg0 = Mix('#ffdce0', bg, 0.6)
 local gh_danger_bg1 = Mix('#ffdce0', bg, 0.8)
 local gh_danger_bg2 = Mix('#ffdce0', bg, 0.9)
 
@@ -564,7 +563,7 @@ if vim.g.doom_one_enable_treesitter then
 	high_link('TSAttribute', 'Attribute')
 	high_link('TSConditional', 'Conditional')
 	high_link('TSComment', 'Comment')
-	high_link('TSConstructor', 'Method')
+	high_link('TSConstructor', 'Structure')
 	high_link('TSConstant', 'Constant')
 	high_link('TSConstBuiltin', 'Constant')
 	high_link('TSConstMacro', 'Macro')
