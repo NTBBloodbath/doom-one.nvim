@@ -60,7 +60,7 @@ end
 
 local base0 = '#1B2229'
 local base1 = '#1c1f24'
--- local base2 = '#202328'
+local base2 = '#202328'
 -- local base3 = '#23272e'
 local base4 = '#3f444a'
 local base5 = '#5B6268'
