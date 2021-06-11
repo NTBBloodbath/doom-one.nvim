@@ -7,7 +7,7 @@
 
 -- Helpers {{{
 
-require('colors.utils')
+require('utils')
 
 -- }}}
 
