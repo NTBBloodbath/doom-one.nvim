@@ -631,7 +631,7 @@ if vim.g.doom_one_enable_treesitter then
 	high_link('TSDanger', 'Error')
 	high_link('TSType', 'Type')
 	high_link('TSTypeBuiltin', 'TypeBuiltin')
-	high_link('TSVariable', 'Variable')
+	high_link('TSVariable', 'None')
 	high_link('TSVariableBuiltin', 'VariableBuiltin')
 end
 
