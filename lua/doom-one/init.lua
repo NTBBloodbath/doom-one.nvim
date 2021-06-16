@@ -26,6 +26,9 @@ end
 if vim.g.doom_one_transparent_background == nil then
 	vim.g.doom_one_transparent_background = false
 end
+if vim.g.doom_one_italic_comments == nil then
+    vim.g.doom_one_italic_comments = false
+end
 
 local transparent_bg = vim.g.doom_one_transparent_background
 
@@ -147,7 +150,7 @@ local general_ui = {
 	CursorLineNr = { fg = fg, bg = bg_highlight },
 	CursorColumn = { bg = bg_highlight },
 
-	Folded = { fg = base7, bg = bg_highlight },
+	Folded = { fg = base5, bg = bg_highlight },
 	FoldColumn = { fg = fg_alt, bg = bg },
 	SignColumn = { bg = transparent_bg and 'NONE' or bg },
 	ColorColumn = { bg = bg_highlight },
@@ -299,7 +302,7 @@ local main_syntax = {
 	URL = { fg = tag, sp = 'undercurl' },
 	Underlined = { fg = tag, sp = 'underline' },
 
-	Comment = { fg = base5 },
+	Comment = { fg = base5, gui = vim.g.doom_one_italic_comments and 'italic' or 'NONE' },
 	CommentBold = { fg = base5, gui = 'bold' },
 	SpecialComment = { fg = base7, gui = 'bold' },
 
@@ -340,7 +343,7 @@ local main_syntax = {
 	Argument = { fg = light_magenta },
 	Attribute = { fg = light_magenta },
 	Identifier = { fg = light_magenta },
-	Property = { fg = orange },
+	Property = { fg = violet },
 	Function = { fg = magenta },
 	FunctionBuiltin = { fg = light_magenta, gui = 'bold' },
 	KeywordFunction = { fg = blue },
