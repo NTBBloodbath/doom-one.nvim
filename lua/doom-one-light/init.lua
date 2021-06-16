@@ -80,7 +80,7 @@ local yellow = '#986801'
 local blue = '#4078f2'
 local dark_blue = '#a0bcf8'
 local magenta = '#a626a4'
-local dark_magenta = Darken(magenta, 0.4)
+local dark_magenta = Darken(magenta, 0.36)
 local violet = '#b751b6'
 local cyan = '#0184bc'
 local white = '#efefef'
@@ -97,7 +97,7 @@ local fg_highlight = Lighten(fg, 0.2)
 
 local tag = Mix(blue, cyan, 0.5)
 
-local diff_info_fg = blue
+local diff_info_fg = orange
 local diff_info_bg0 = Mix('#D8EEFD', bg, 0.6)
 local diff_info_bg1 = Mix('#D8EEFD', bg, 0.8)
 
