@@ -188,8 +188,8 @@ local general_ui = {
 	PmenuThumb = { bg = fg },
 }
 
-if vim.fn.exists('&pumblend') == 1 then
-	vim.cmd('set pumblend=20')
+if vim.opt.pumblend == 1 then
+	vim.opt.pumblend = 20
 end
 
 apply_highlight(general_ui)
