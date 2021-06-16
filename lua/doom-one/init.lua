@@ -181,7 +181,7 @@ local general_ui = {
 	StatusLinePart = { fg = base6, bg = bg_popup, gui = 'bold' },
 	StatusLinePartNC = { fg = base6, bg = bg_popup, gui = 'bold' },
 
-	Pmenu = { fg = fg, bg = bg_popup },
+	Pmenu = { fg = fg, bg = bg_highlight },
 	PmenuSel = { fg = base0, bg = blue },
 	PmenuSelBold = { fg = base0, bg = blue, gui = 'bold' },
 	PmenuSbar = { bg = bg_alt },
