@@ -231,6 +231,7 @@ apply_highlight(buffers_ui)
 
 local search_high_ui = {
 	Search = { fg = fg, bg = dark_blue, gui = 'bold' },
+	Substitute = {fg = red, gui = 'strikethrough,bold'},
 	IncSearch = { fg = fg, bg = dark_blue, gui = 'bold' },
 	IncSearchCursor = { gui = 'reverse' },
 
