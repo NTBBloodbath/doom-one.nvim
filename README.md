@@ -15,9 +15,15 @@
 
 This colorscheme is ported from [doom-emacs' doom-one].
 
+## Notices
+
+- `2021-06-16`: since the colorscheme is now 100% lua, your neovim must include
+  [this](https://github.com/neovim/neovim/pull/14686).
+
 ## Features
 
 - Optional terminal colors
+- Optional italic comments
 - Optional TreeSitter support
 - Optional transparent background
 - Support for numerous plugins (nvim-tree, barbar, lspsaga, etc)
@@ -35,10 +41,12 @@ use 'NTBBloodbath/doom-one.nvim'
 
 - `doom_one_enable_treesitter` - Enable TreeSitter support, `v:true` by default.
 - `doom_one_terminal_colors` - Enable terminal colors, `v:false` by default.
+- `doom_one_italic_comments` - Enable italic comments, `v:false` by default.
 - `doom_one_transparent_background` - Enable transparent background, `v:false` by default.
 - `doom_one_cursor_coloring` - Enable cursor coloring (blue), `v:false` by default.
 
 > **NOTE:** All those options are global Vim variables and uses `v:true` / `v:false` instead of `1` / `0`.
+> So if you're using Lua you will need to use `true` / `false`.
 
 ## Contribute
 
