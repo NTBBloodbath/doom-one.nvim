@@ -98,7 +98,7 @@ local fg_highlight = Lighten(fg, 0.2)
 
 local tag = Mix(blue, cyan, 0.5)
 
-local diff_info_fg = blue
+local diff_info_fg = orange
 local diff_info_bg0 = Mix('#D8EEFD', bg, 0.6)
 local diff_info_bg1 = Mix('#D8EEFD', bg, 0.8)
 
