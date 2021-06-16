@@ -322,7 +322,7 @@ local main_syntax = {
 	Conditional = { fg = blue },
 
 	Variable = { fg = '#8B93E6' },
-	VariableBuiltin = { fg = '8B93E6', gui = 'bold' },
+	VariableBuiltin = { fg = '#8B93E6', gui = 'bold' },
 	Constant = { fg = violet, gui = 'bold' },
 
 	Number = { fg = orange },
