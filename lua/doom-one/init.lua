@@ -227,7 +227,7 @@ apply_highlight(buffers_ui)
 
 -- }}}
 
--- Search, Highlight. Conceal, Messgaes {{{
+-- Search, Highlight. Conceal, Messages {{{
 
 local search_high_ui = {
 	Search = { fg = fg, bg = dark_blue, gui = 'bold' },
