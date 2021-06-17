@@ -256,37 +256,6 @@ apply_highlight(general_ui)
 
 -- }}}
 
--- Buffers {{{
-
-local buffers_ui = {
-	BufferCurrent = { fg = base9, bg = bg },
-	BufferCurrentIndex = { fg = base6, bg = bg },
-	BufferCurrentMod = { fg = yellow, bg = bg },
-	BufferCurrentSign = { fg = blue, bg = bg },
-	BufferCurrentTarget = { fg = red, bg = bg, gui = 'bold' },
-
-	BufferVisible = { fg = base7, bg = bg },
-	BufferVisibleIndex = { fg = base9, bg = bg },
-	BufferVisibleMod = { fg = yellow, bg = bg },
-	BufferVisibleSign = { fg = base4, bg = bg },
-	BufferVisibleTarget = { fg = red, bg = bg, gui = 'bold' },
-
-	BufferInactive = { fg = base6, bg = base1 },
-	BufferInactiveIndex = { fg = base6, bg = base1 },
-	BufferInactiveMod = { fg = yellow, bg = base1 },
-	BufferInactiveSign = { fg = base4, bg = base1 },
-	BufferInactiveTarget = { fg = red, bg = base1, gui = 'bold' },
-
-	BufferTabpages = { fg = blue, bg = bg_statusline, gui = 'bold' },
-	BufferTabpageFill = { fg = base4, bg = base1, gui = 'bold' },
-
-	BufferPart = { fg = diff_info_fg, bg = diff_info_bg0, gui = 'bold' },
-}
-
-apply_highlight(buffers_ui)
-
--- }}}
-
 -- Search, Highlight. Conceal, Messages {{{
 
 local search_high_ui = {
@@ -464,6 +433,37 @@ apply_highlight(diff)
 -- }}}
 
 -- Plugins {{{
+
+-- barbar.nvim {{{
+
+local barbar = {
+	BufferCurrent = { fg = base9, bg = bg },
+	BufferCurrentIndex = { fg = base6, bg = bg },
+	BufferCurrentMod = { fg = yellow, bg = bg },
+	BufferCurrentSign = { fg = blue, bg = bg },
+	BufferCurrentTarget = { fg = red, bg = bg, gui = 'bold' },
+
+	BufferVisible = { fg = base7, bg = bg },
+	BufferVisibleIndex = { fg = base9, bg = bg },
+	BufferVisibleMod = { fg = yellow, bg = bg },
+	BufferVisibleSign = { fg = base4, bg = bg },
+	BufferVisibleTarget = { fg = red, bg = bg, gui = 'bold' },
+
+	BufferInactive = { fg = base6, bg = base1 },
+	BufferInactiveIndex = { fg = base6, bg = base1 },
+	BufferInactiveMod = { fg = yellow, bg = base1 },
+	BufferInactiveSign = { fg = base4, bg = base1 },
+	BufferInactiveTarget = { fg = red, bg = base1, gui = 'bold' },
+
+	BufferTabpages = { fg = blue, bg = bg_statusline, gui = 'bold' },
+	BufferTabpageFill = { fg = base4, bg = base1, gui = 'bold' },
+
+	BufferPart = { fg = diff_info_fg, bg = diff_info_bg0, gui = 'bold' },
+}
+
+apply_highlight(barbar)
+
+-- }}}
 
 -- Gitgutter {{{
 
