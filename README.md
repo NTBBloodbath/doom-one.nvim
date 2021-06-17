@@ -5,9 +5,7 @@
 ![License](https://img.shields.io/github/license/NTBBloodbath/doom-one.nvim?style=flat-square)
 ![Neovim version](https://img.shields.io/badge/Neovim-0.5-57A143?style=flat-square&logo=neovim)
 
-[Features](#features) • [Install](#install) • [Contribute](#contribute)
-
-![Demo](./assets/demo.png)
+[Features](#features) • [Install](#install) • [Screenshots](#screenshots) • [Contribute](#contribute)
 
 </div>
 
@@ -48,6 +46,16 @@ use 'NTBBloodbath/doom-one.nvim'
 
 > **NOTE:** All those options are global Vim variables and uses `v:true` / `v:false` instead of `1` / `0`.
 > So if you're using Lua you will need to use `true` / `false`.
+
+## Screenshots
+
+> Dark variant:
+
+![doom-one](./assets/doom-one.png)
+
+> Light variant:
+
+![doom-one-light](./assets/doom-one-light.png)
 
 ## Contribute
 
