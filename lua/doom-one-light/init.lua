@@ -29,6 +29,9 @@ end
 if vim.g.doom_one_italic_comments == nil then
     vim.g.doom_one_italic_comments = false
 end
+if vim.g.doom_one_telescope_highlights == nil then
+    vim.g.doom_one_telescope_highlights = true
+end
 
 local transparent_bg = vim.g.doom_one_transparent_background
 
@@ -230,6 +233,7 @@ apply_highlight(buffers_ui)
 
 local search_high_ui = {
 	Search = { fg = fg, bg = dark_blue, gui = 'bold' },
+	Substitute = {fg = red, gui = 'strikethrough,bold'},
 	IncSearch = { fg = fg, bg = dark_blue, gui = 'bold' },
 	IncSearchCursor = { gui = 'reverse' },
 
@@ -428,21 +432,23 @@ high_link('GitSignsChangeDelete', 'DiffModifiedGutter')
 
 -- Telescope {{{
 
-local telescope = {
-	TelescopeSelection = { fg = yellow, gui = 'bold' },
-	TelescopeSelectionCaret = { fg = blue },
-	TelescopeMultiSelection = { fg = grey },
-	TelescopeNormal = { fg = fg },
-	TelescopeMatching = { fg = green, gui = 'bold' },
-	TelescopePromptPrefix = { fg = blue },
-	TelescopeBorder = { fg = blue },
-	TelescopePromptBorder = { fg = blue },
-	TelescopeResultsBorder = { fg = blue },
-	TelescopePreviewBorder = { fg = blue },
-}
+if vim.g.doom_one_telescope_highlights then
+	local telescope = {
+	    TelescopeSelection = { fg = yellow, gui = 'bold' },
+	    TelescopeSelectionCaret = { fg = blue },
+	    TelescopeMultiSelection = { fg = grey },
+	    TelescopeNormal = { fg = fg },
+	    TelescopeMatching = { fg = green, gui = 'bold' },
+	    TelescopePromptPrefix = { fg = blue },
+	    TelescopeBorder = { fg = blue },
+	    TelescopePromptBorder = { fg = blue },
+	    TelescopeResultsBorder = { fg = blue },
+	    TelescopePreviewBorder = { fg = blue },
+	}
 
-apply_highlight(telescope)
-high_link('TelescopePrompt', 'TelescopeNormal')
+	apply_highlight(telescope)
+	high_link('TelescopePrompt', 'TelescopeNormal')
+end
 
 -- }}}
 
@@ -632,7 +638,7 @@ if vim.g.doom_one_enable_treesitter then
 	high_link('TSDanger', 'Error')
 	high_link('TSType', 'Type')
 	high_link('TSTypeBuiltin', 'TypeBuiltin')
-	high_link('TSVariable', 'Variable')
+	high_link('TSVariable', 'None')
 	high_link('TSVariableBuiltin', 'VariableBuiltin')
 end
 
