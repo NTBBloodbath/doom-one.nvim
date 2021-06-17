@@ -5,9 +5,5 @@ end
 
 vim.g['colors_name'] = 'doom-one'
 
-if vim.opt.background ~= 'dark' then
-	vim.opt.background = 'dark'
-end
-
 package.loaded['doom-one'] = nil
 require('doom-one')

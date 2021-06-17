@@ -64,10 +64,12 @@ local function apply_highlight(groups)
 	end
 end
 
+-- Change the colorscheme colors depending on the current background, defaults to
+-- doom-one dark variant colors
 local base0 = '#1B2229'
 local base1 = '#1c1f24'
 local base2 = '#202328'
--- local base3 = '#23272e'
+local base3 = '#23272e'
 local base4 = '#3f444a'
 local base5 = '#5B6268'
 local base6 = '#73797e'
@@ -107,15 +109,65 @@ local diff_info_bg1 = Mix('#D8EEFD', bg, 0.8)
 
 local diff_add_fg = green
 local diff_add_fg0 = Mix(green, fg, 0.4)
-local diff_add_bg0 = Mix('#506d5b', bg, 0.4)
--- local diff_add_bg1 = Mix('#acf2bd', bg, 0.6)
-local diff_add_bg2 = Mix('#acf2bd', bg, 0.8)
+local diff_add_bg0 = Mix('#506d5b', bg, 0.6)
+local diff_add_bg1 = Mix('#acf2bd', bg, 0.8)
 
 local gh_danger_fg = red
 local gh_danger_fg0 = Mix(red, fg, 0.6)
--- local gh_danger_bg0 = Mix('#ffdce0', bg, 0.6)
+local gh_danger_bg0 = Mix('#ffdce0', bg, 0.6)
 local gh_danger_bg1 = Mix('#ffdce0', bg, 0.8)
-local gh_danger_bg2 = Mix('#ffdce0', bg, 0.9)
+
+if vim.opt.background:get() == 'light' then
+    base0 = '#f0f0f0'
+    base1 = '#e7e7e7'
+    base2 = '#dfdfdf'
+    base3 = '#c6c7c7'
+    base4 = '#9ca0a4'
+    base5 = '#383a42'
+    base6 = '#202328'
+    base7 = '#23272e'
+    base8 = '#1c1f24'
+    base9 = '#1B2229'
+
+    grey = base4
+    red = '#e45649'
+    orange = '#da8548'
+    green = '#50a14f'
+    yellow = '#986801'
+    blue = '#4078f2'
+    dark_blue = '#a0bcf8'
+    magenta = '#a626a4'
+    light_magenta = Darken(magenta, 0.36)
+    violet = '#b751b6'
+    cyan = '#0184bc'
+    white = '#efefef'
+
+    bg = '#fafafa'
+    bg_alt = '#f0f0f0'
+    bg_highlight = Darken(bg, 0.2)
+    bg_popup = bg_alt
+    bg_statusline = bg_popup
+
+    fg = base5
+    fg_alt = base3
+    fg_highlight = Lighten(fg, 0.2)
+
+    tag = Mix(blue, cyan, 0.5)
+
+    diff_info_fg = orange
+    diff_info_bg0 = Mix('#D8EEFD', bg, 0.6)
+    diff_info_bg1 = Mix('#D8EEFD', bg, 0.8)
+
+    diff_add_fg = green
+    diff_add_fg0 = Mix(green, fg, 0.4)
+    diff_add_bg0 = Mix('#506d5b', bg, 0.4)
+    diff_add_bg1 = Mix('#acf2bd', bg, 0.8)
+
+    gh_danger_fg = red
+    gh_danger_fg0 = Mix(red, fg, 0.6)
+    gh_danger_bg0 = Mix('#ffdce0', bg, 0.8)
+    gh_danger_bg1 = Mix('#ffdce0', bg, 0.9)
+end
 
 if vim.g.doom_one_cursor_coloring then
 	vim.opt.guicursor =
@@ -380,14 +432,14 @@ local diff = {
 	diffLine = { fg = base8, bg = diff_info_bg1 },
 	diffSubName = { fg = base8, bg = diff_info_bg1 },
 
-	DiffAdd = { bg = diff_add_bg2 },
-	DiffChange = { bg = diff_add_bg2 },
+	DiffAdd = { bg = diff_add_bg1 },
+	DiffChange = { bg = diff_add_bg1 },
 	DiffText = { bg = diff_add_bg0 },
-	DiffDelete = { bg = gh_danger_bg1 },
+	DiffDelete = { bg = gh_danger_bg0 },
 
-	DiffAdded = { fg = diff_add_fg0, bg = diff_add_bg2 },
+	DiffAdded = { fg = diff_add_fg0, bg = diff_add_bg1 },
 	DiffModified = { fg = fg, bg = diff_info_bg0 },
-	DiffRemoved = { fg = gh_danger_fg0, bg = gh_danger_bg2 },
+	DiffRemoved = { fg = gh_danger_fg0, bg = gh_danger_bg1 },
 
 	DiffAddedGutter = { fg = diff_add_fg, gui = 'bold' },
 	DiffModifiedGutter = { fg = diff_info_fg, gui = 'bold' },
