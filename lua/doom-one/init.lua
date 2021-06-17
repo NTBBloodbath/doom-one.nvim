@@ -66,6 +66,9 @@ end
 
 -- Change the colorscheme colors depending on the current background, defaults to
 -- doom-one dark variant colors
+local current_bg = vim.opt.background:get()
+local light_bg = false
+
 local base0 = '#1B2229'
 local base1 = '#1c1f24'
 local base2 = '#202328'
@@ -117,7 +120,9 @@ local gh_danger_fg0 = Mix(red, fg, 0.6)
 local gh_danger_bg0 = Mix('#ffdce0', bg, 0.6)
 local gh_danger_bg1 = Mix('#ffdce0', bg, 0.8)
 
-if vim.opt.background:get() == 'light' then
+if current_bg == 'light' then
+    light_bg = true
+
     base0 = '#f0f0f0'
     base1 = '#e7e7e7'
     base2 = '#dfdfdf'
@@ -368,23 +373,23 @@ local main_syntax = {
 	PreProc = { fg = violet, gui = 'bold' },
 	PreCondit = { fg = violet, gui = 'bold' },
 
-	Label = { fg = blue },
-	Repeat = { fg = blue },
-	Keyword = { fg = blue },
-	Operator = { fg = blue },
-	Delimiter = { fg = blue },
-	Statement = { fg = blue },
-	Exception = { fg = blue },
-	Conditional = { fg = blue },
+	Label = { fg = light_bg and orange or blue },
+	Repeat = { fg = light_bg and orange or blue },
+	Keyword = { fg = light_bg and orange or blue },
+	Operator = { fg = light_bg and orange or blue },
+	Delimiter = { fg = light_bg and orange or blue },
+	Statement = { fg = light_bg and orange or blue },
+	Exception = { fg = light_bg and orange or blue },
+	Conditional = { fg = light_bg and orange or blue },
 
 	Variable = { fg = '#8B93E6' },
 	VariableBuiltin = { fg = '#8B93E6', gui = 'bold' },
 	Constant = { fg = violet, gui = 'bold' },
 
-	Number = { fg = orange },
-	Float = { fg = orange },
-	Boolean = { fg = orange, gui = 'bold' },
-	Enum = { fg = orange },
+	Number = { fg = light_bg and yellow or orange },
+	Float = { fg = light_bg and yellow or orange },
+	Boolean = { fg = light_bg and yellow or orange, gui = 'bold' },
+	Enum = { fg = light_bg and yellow or orange },
 
 	Character = { fg = violet, gui = 'bold' },
 	SpecialChar = { fg = base8, gui = 'bold' },
@@ -402,15 +407,15 @@ local main_syntax = {
 	Property = { fg = magenta },
 	Function = { fg = magenta },
 	FunctionBuiltin = { fg = light_magenta, gui = 'bold' },
-	KeywordFunction = { fg = blue },
+	KeywordFunction = { fg = light_bg and orange or blue },
 	Method = { fg = violet },
 
 	Type = { fg = yellow },
 	TypeBuiltin = { fg = yellow, gui = 'bold' },
-	StorageClass = { fg = blue },
-	Class = { fg = blue },
-	Structure = { fg = blue },
-	Typedef = { fg = blue },
+	StorageClass = { fg = light_bg and orange or blue },
+	Class = { fg = light_bg and orange or blue },
+	Structure = { fg = light_bg and orange or blue },
+	Typedef = { fg = light_bg and orange or blue },
 
 	Regexp = { fg = '#dd0093' },
 	RegexpSpecial = { fg = '#a40073' },
@@ -488,15 +493,15 @@ high_link('GitSignsChangeDelete', 'DiffModifiedGutter')
 if vim.g.doom_one_telescope_highlights then
 	local telescope = {
 	    TelescopeSelection = { fg = yellow, gui = 'bold' },
-	    TelescopeSelectionCaret = { fg = blue },
+	    TelescopeSelectionCaret = { fg = light_bg and orange or blue },
 	    TelescopeMultiSelection = { fg = grey },
 	    TelescopeNormal = { fg = fg },
 	    TelescopeMatching = { fg = green, gui = 'bold' },
-	    TelescopePromptPrefix = { fg = blue },
-	    TelescopeBorder = { fg = blue },
-	    TelescopePromptBorder = { fg = blue },
-	    TelescopeResultsBorder = { fg = blue },
-	    TelescopePreviewBorder = { fg = blue },
+	    TelescopePromptPrefix = { fg = light_bg and orange or blue },
+	    TelescopeBorder = { fg = light_bg and orange or blue },
+	    TelescopePromptBorder = { fg = light_bg and orange or blue },
+	    TelescopeResultsBorder = { fg = light_bg and orange or blue },
+	    TelescopePreviewBorder = { fg = light_bg and orange or blue },
 	}
 
 	apply_highlight(telescope)
@@ -508,12 +513,12 @@ end
 -- NvimTree {{{
 
 local nvim_tree = {
-	NvimTreeFolderName = { fg = blue, gui = 'bold' },
+	NvimTreeFolderName = { fg = light_bg and base9 or blue, gui = 'bold' },
 	NvimTreeRootFolder = { fg = green },
 	NvimTreeEmptyFolderName = { fg = fg_alt, gui = 'bold' },
 	NvimTreeSymlink = { fg = fg, sp = 'underline' },
 	NvimTreeExecFile = { fg = green, gui = 'bold' },
-	NvimTreeImageFile = { fg = blue },
+	NvimTreeImageFile = { fg = light_bg and orange or blue },
 	NvimTreeOpenedFile = { fg = fg_alt },
 	NvimTreeSpecialFile = { fg = fg, sp = 'underline' },
 	NvimTreeMarkdownFile = { fg = fg, sp = 'underline' },
@@ -536,7 +541,7 @@ high_link('NvimTreeOpenedFolderName', 'NvimTreeFolderName')
 
 local dashboard = {
     dashboardHeader = { fg = '#586268' },
-    dashboardCenter = { fg = blue },
+    dashboardCenter = { fg = light_bg and orange or blue },
     dashboardShortcut = { fg = '#9788b9' },
 }
 
@@ -544,11 +549,11 @@ apply_highlight(dashboard)
 high_link('dashboardFooter', 'dashboardHeader')
 
 -- }}}
-        
+
 -- WhichKey {{{
 
 local whichkey = {
-    WhichKey = { fg = blue },
+    WhichKey = { fg = light_bg and orange or blue },
     WhichKeyGroup = { fg = magenta },
     WhichKeyDesc = { fg = magenta },
     WhichKeySeparator = { fg = base5 },
@@ -559,7 +564,7 @@ local whichkey = {
 apply_highlight(whichkey)
 
 -- }}}
-        
+
 -- }}}
 
 -- LSP {{{
