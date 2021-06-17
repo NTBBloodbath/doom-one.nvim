@@ -29,6 +29,9 @@ end
 if vim.g.doom_one_italic_comments == nil then
     vim.g.doom_one_italic_comments = false
 end
+if vim.g.doom_one_telescope_highlights == nil then
+    vim.g.doom_one_telescope_highlights = true
+end
 
 local transparent_bg = vim.g.doom_one_transparent_background
 
@@ -181,15 +184,15 @@ local general_ui = {
 	StatusLinePart = { fg = base6, bg = bg_popup, gui = 'bold' },
 	StatusLinePartNC = { fg = base6, bg = bg_popup, gui = 'bold' },
 
-	Pmenu = { fg = fg, bg = bg_popup },
+	Pmenu = { fg = fg, bg = bg_highlight },
 	PmenuSel = { fg = base0, bg = blue },
 	PmenuSelBold = { fg = base0, bg = blue, gui = 'bold' },
 	PmenuSbar = { bg = bg_alt },
 	PmenuThumb = { bg = fg },
 }
 
-if vim.fn.exists('&pumblend') == 1 then
-	vim.cmd('set pumblend=20')
+if vim.opt.pumblend == 1 then
+	vim.opt.pumblend = 20
 end
 
 apply_highlight(general_ui)
@@ -231,6 +234,7 @@ apply_highlight(buffers_ui)
 
 local search_high_ui = {
 	Search = { fg = fg, bg = dark_blue, gui = 'bold' },
+	Substitute = {fg = red, gui = 'strikethrough,bold'},
 	IncSearch = { fg = fg, bg = dark_blue, gui = 'bold' },
 	IncSearchCursor = { gui = 'reverse' },
 
@@ -343,7 +347,7 @@ local main_syntax = {
 	Argument = { fg = light_magenta },
 	Attribute = { fg = light_magenta },
 	Identifier = { fg = light_magenta },
-	Property = { fg = violet },
+	Property = { fg = magenta },
 	Function = { fg = magenta },
 	FunctionBuiltin = { fg = light_magenta, gui = 'bold' },
 	KeywordFunction = { fg = blue },
@@ -429,21 +433,23 @@ high_link('GitSignsChangeDelete', 'DiffModifiedGutter')
 
 -- Telescope {{{
 
-local telescope = {
-	TelescopeSelection = { fg = yellow, gui = 'bold' },
-	TelescopeSelectionCaret = { fg = blue },
-	TelescopeMultiSelection = { fg = grey },
-	TelescopeNormal = { fg = fg },
-	TelescopeMatching = { fg = green, gui = 'bold' },
-	TelescopePromptPrefix = { fg = blue },
-	TelescopeBorder = { fg = blue },
-	TelescopePromptBorder = { fg = blue },
-	TelescopeResultsBorder = { fg = blue },
-	TelescopePreviewBorder = { fg = blue },
-}
+if vim.g.doom_one_telescope_highlights then
+	local telescope = {
+	    TelescopeSelection = { fg = yellow, gui = 'bold' },
+	    TelescopeSelectionCaret = { fg = blue },
+	    TelescopeMultiSelection = { fg = grey },
+	    TelescopeNormal = { fg = fg },
+	    TelescopeMatching = { fg = green, gui = 'bold' },
+	    TelescopePromptPrefix = { fg = blue },
+	    TelescopeBorder = { fg = blue },
+	    TelescopePromptBorder = { fg = blue },
+	    TelescopeResultsBorder = { fg = blue },
+	    TelescopePreviewBorder = { fg = blue },
+	}
 
-apply_highlight(telescope)
-high_link('TelescopePrompt', 'TelescopeNormal')
+	apply_highlight(telescope)
+	high_link('TelescopePrompt', 'TelescopeNormal')
+end
 
 -- }}}
 
@@ -630,7 +636,7 @@ if vim.g.doom_one_enable_treesitter then
 	high_link('TSDanger', 'Error')
 	high_link('TSType', 'Type')
 	high_link('TSTypeBuiltin', 'TypeBuiltin')
-	high_link('TSVariable', 'Variable')
+	high_link('TSVariable', 'None')
 	high_link('TSVariableBuiltin', 'VariableBuiltin')
 end
 

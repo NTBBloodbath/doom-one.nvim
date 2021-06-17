@@ -44,6 +44,7 @@ use 'NTBBloodbath/doom-one.nvim'
 - `doom_one_italic_comments` - Enable italic comments, `v:false` by default.
 - `doom_one_transparent_background` - Enable transparent background, `v:false` by default.
 - `doom_one_cursor_coloring` - Enable cursor coloring (blue), `v:false` by default.
+- `doom_one_telescope_highlights` - Enable telescope highlighting, `v:true` by default
 
 > **NOTE:** All those options are global Vim variables and uses `v:true` / `v:false` instead of `1` / `0`.
 > So if you're using Lua you will need to use `true` / `false`.
