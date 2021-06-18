@@ -1,0 +1,108 @@
+*doom-one.txt* doom-emacs' doom-one Lua port for Neovim
+
+                 _                                              ~
+                | |                                             ~
+              __| | ___   ___  _ __ ___ ______ ___  _ __   ___  ~
+             / _` |/ _ \ / _ \| '_ ` _ \______/ _ \| '_ \ / _ \ ~
+            | (_| | (_) | (_) | | | | | |    | (_) | | | |  __/ ~
+             \__,_|\___/ \___/|_| |_| |_|     \___/|_| |_|\___| ~
+
+ NTBBloodbath                                                       *doom-one*
+
+===============================================================================
+CONTENTS                                                    *doom-one-contents*
+
+    1. Usage...................................................|doom-one-usage|
+        1. Switching variants...............|doom-one-usage-switching-variants|
+        2. Options.....................................|doom-one-usage-options|
+    2. License...............................................|doom-one-license|
+    3. Contributing.....................................|doom-one-contributing|
+
+
+===============================================================================
+USAGE                                                          *doom-one-usage*
+
+As any other colorscheme, just place this somewhere in your configurations
+
+`vim.cmd("colorscheme doom-one")`
+
+doom-one contains a few customization variables, see |doom-one-usage-options|.
+
+
+===============================================================================
+SWITCHING VARIANTS                          *doom-one-usage-switching-variants*
+
+If you want to switch between the dark and light variants of doom-one just set
+the `&background` option to `dark` or `light`.
+
+You can also write a function for toggle the colorscheme variant and assign
+a map for it.
+
+`function toggle_background()`
+`  if vim.opt.background:get() == 'dark' then`
+`    vim.opt.background = 'light'`
+`  else`
+`    vim.opt.background = 'dark'`
+`  end`
+`end`
+
+`vim.api.nvim_set_keymap('n', 'tb', ':lua toggle_background()<CR>', {`
+`  silent = true,`
+`  noremap = true,`
+`})`
+
+
+===============================================================================
+OPTIONS                                                *doom-one-usage-options*
+
+doom-one has a few customization options to improve your experience with the
+colorscheme. All those options are global Neovim variables and uses
+`v:true` / `v:false` instead of `1` / `0` respectively. So if you're using Lua
+you can use `true` / `false` instead of a non-sense syntax.
+
+Those options starts with a `doom_one_` prefix and they are the following:
+
+|      Option name       |           Description          |  Default value  |
+| ---------------------- | ------------------------------ | --------------- |
+| `enable_treesitter`      | Enable TreeSitter support      |     `v:true`      |
+| `terminal_colors`        | Enable Neovim terminal colors  |     `v:false`     |
+| `italic_comments`        | Enable italic comments         |     `v:false`     |
+| `transparent_background` | Enable transparent background  |     `v:false`     |
+| `cursor_coloring`        | Enable cursor coloring (blue)  |     `v:false`     |
+| `telescope_highlights`   | Enable telescope highlighting  |     `v:true`      |
+
+
+===============================================================================
+LICENSE                                                      *doom-one-license*
+
+doom-one.nvim is distributed under MIT License.
+
+Copyright (c) 2021 NTBBloodbath
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+===============================================================================
+CONTRIBUTING                                            *doom-one-contributing*
+
+    1. Fork it (`github.com/NTBBloodbath/doom-one.nvim/fork`)
+    2. Create your feature branch (`git checkout -b my-new-feature`)
+    3. Commit your changes (`git commit -am 'Add some feature'`)
+    4. Push to the branch (`git push origin my-new-feature`)
+    5. Create a new Pull Request
