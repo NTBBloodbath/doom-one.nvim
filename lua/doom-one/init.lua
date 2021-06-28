@@ -438,6 +438,18 @@ apply_highlight(diff)
 
 -- }}}
 
+-- Markdown {{{
+local markdown = {
+      markdownCode = { bg = bg_highlight  },
+      markdownCodeBlock = { bg = bg_highlight  },
+      markdownH1 = { gui = "bold"  },
+      markdownH2 = { gui = "bold"  },
+      markdownLinkText = { gui = "underline"  },
+}
+
+apply_highlight(markdown)
+--}}}
+
 -- Plugins {{{
 
 -- barbar.nvim {{{
