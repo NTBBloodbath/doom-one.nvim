@@ -239,7 +239,7 @@ local general_ui = {
 	TabLineSel = { fg = blue, bg = bg, gui = 'bold' },
 	TabLineFill = { bg = transparent_bg and 'NONE' or base1, gui = 'bold' },
 
-	StatusLine = { fg = base8, bg = bg_popup },
+	StatusLine = { fg = base8, bg = base3 },
 	StatusLineNC = { fg = base6, bg = bg_popup },
 	StatusLinePart = { fg = base6, bg = bg_popup, gui = 'bold' },
 	StatusLinePartNC = { fg = base6, bg = bg_popup, gui = 'bold' },
