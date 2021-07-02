@@ -336,10 +336,10 @@ local main_syntax = {
 	Underlined = { fg = tag, gui = 'underline' },
 
 	Comment = {
-		fg = base5,
+		fg = fg_alt,
 		gui = vim.g.doom_one_italic_comments and 'italic' or 'NONE',
 	},
-	CommentBold = { fg = base5, gui = 'bold' },
+	CommentBold = { fg = fg_alt, gui = 'bold' },
 	SpecialComment = { fg = base7, gui = 'bold' },
 
 	Macro = { fg = violet },
