@@ -34,7 +34,7 @@ Packer
 use 'NTBBloodbath/doom-one.nvim'
 ```
 
-> **IMPORTANT:** this colorscheme requires Neovim HEAD to work.
+> **IMPORTANT:** this colorscheme requires Neovim >= 0.5 to work.
 
 ## Options
 
