@@ -20,6 +20,7 @@ This colorscheme is ported from [doom-emacs' doom-one].
 
 ## Features
 
+- Asynchronously loading for faster startuptime
 - Optional terminal colors
 - Optional italic comments
 - Optional TreeSitter support
