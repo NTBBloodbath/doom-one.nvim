@@ -556,6 +556,19 @@ local dashboard = {
 
 -- }}}
 
+-- Startify {{{
+
+local startify = {
+	StartifyHeader = { fg = bg_popup },
+	StartifyBracket = { fg = bg_popup },
+	StartifyNumber = { fg = blue },
+	StartifyPath = { fg = violet },
+	StartifySlash = { fg = violet },
+	StartifyFile = { fg = green },
+}
+
+-- }}}
+
 -- WhichKey {{{
 
 local whichkey = {
@@ -638,6 +651,7 @@ async = vim.loop.new_async(vim.schedule_wrap(function()
 		whichkey,
 		msg_underline,
 		lspsaga,
+		startify,
 	}
 
 	-- Text levels {{{
