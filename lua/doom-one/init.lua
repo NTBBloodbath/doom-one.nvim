@@ -798,6 +798,12 @@ high_link('LspLinesDiagBorder', 'Bold')
 -- TreeSitter {{{
 
 if vim.g.doom_one_enable_treesitter then
+    -- We will set a special definition for TSStrike here
+    local treesitter = {
+        TSStrike = { fg = utils.Darken(violet, 0.2), cterm = 'strikethrough', gui = 'strikethrough' },
+    }
+
+    apply_highlight(treesitter)
 	high_link('TSException', 'Exception')
 	high_link('TSAnnotation', 'PreProc')
 	high_link('TSAttribute', 'Attribute')
