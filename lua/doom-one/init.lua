@@ -90,6 +90,7 @@ local dark_blue = '#2257A0'
 local magenta = '#c678dd'
 local light_magenta = utils.Lighten(magenta, 0.4)
 local violet = '#a9a1e1'
+local dark_violet = '#4e4f67'
 local cyan = '#46D9FF'
 local white = '#efefef'
 
@@ -114,6 +115,19 @@ local diff_add_fg = green
 local diff_add_fg0 = utils.Mix(green, fg, 0.4)
 local diff_add_bg0 = utils.Mix('#506d5b', bg, 0.6)
 local diff_add_bg1 = utils.Mix('#acf2bd', bg, 0.8)
+
+local ng_add_fg = '#799850'
+local ng_add_fg_hl = green
+local ng_add_bg = '#333a38'
+local ng_add_bg_hl = '#3e493d'
+
+local ng_delete_fg = '#cc5655'
+local ng_delete_fg_hl = red
+local ng_delete_bg = '#392d34'
+local ng_delete_bg_hl = '#3f343a'
+
+local ng_header_bg = dark_violet
+local ng_header_bg_hl = violet
 
 local gh_danger_fg = red
 local gh_danger_fg0 = utils.Mix(red, fg, 0.6)
@@ -144,6 +158,7 @@ if current_bg == 'light' then
 	magenta = '#a626a4'
 	light_magenta = utils.Darken(magenta, 0.36)
 	violet = '#b751b6'
+	dark_violet = '#e5c7e5'
 	cyan = '#0184bc'
 	white = '#efefef'
 
@@ -167,6 +182,19 @@ if current_bg == 'light' then
 	diff_add_fg0 = utils.Mix(green, fg, 0.4)
 	diff_add_bg0 = utils.Mix('#506d5b', bg, 0.4)
 	diff_add_bg1 = utils.Mix('#acf2bd', bg, 0.8)
+
+	ng_add_fg = '#40803f'
+	ng_add_fg_hl = green
+	ng_add_bg = '#e9f1e8'
+	ng_add_bg_hl = '#d8e8d7'
+
+	ng_delete_fg = '#cc5655'
+	ng_delete_fg_hl = red
+	ng_delete_bg = '#f7e9e8'
+	ng_delete_bg_hl = '#f5d9d6'
+
+	ng_header_bg = dark_violet
+	ng_header_bg_hl = violet
 
 	gh_danger_fg = red
 	gh_danger_fg0 = utils.Mix(red, fg, 0.6)
@@ -609,6 +637,28 @@ if vim.g.doom_one_telescope_highlights then
 	apply_highlight(telescope)
 	high_link('TelescopePrompt', 'TelescopeNormal')
 end
+
+-- }}}
+
+-- Neogit {{{
+
+local neogit = {
+	NeogitDiffAdd = { fg = ng_add_fg, bg = ng_add_bg},
+	NeogitDiffAddHighlight = { fg = ng_add_fg_hl, bg = ng_add_bg_hl, gui = 'bold' },
+	NeogitDiffDelete = { fg = ng_delete_fg, bg = ng_delete_bg },
+	NeogitDiffDeleteHighlight = { fg = ng_delete_fg_hl, bg = ng_delete_bg_hl, gui = 'bold' },
+	NeogitDiffContext = { fg = fg_alt, bg = bg },
+	NeogitDiffContextHighlight = { fg = fg, bg = bg_alt },
+	NeogitHunkHeader = { fg = bg, bg = ng_header_bg },
+	NeogitHunkHeaderHighlight = { fg = bg_alt, bg = ng_header_bg_hl, gui = 'bold' },
+	NeogitStagedChanges = { fg = blue, gui = 'bold' },
+	NeogitStagedChangesRegion = { bg = bg_highlight },
+	NeogitStashes = { fg = blue, gui = 'bold' },
+	NeogitUnstagedChanges = { fg = blue, gui = 'bold' },
+	NeogitUntrackedfiles = { fg = blue, gui = 'bold' },
+}
+
+apply_highlight(neogit)
 
 -- }}}
 
