@@ -566,7 +566,6 @@ end
 
 -- }}}
 
-
 -- Gitgutter {{{
 
 high_link('GitGutterAdd', 'DiffAddedGutter')
@@ -710,6 +709,15 @@ local indent_blankline = {
 apply_highlight(indent_blankline)
 
 -- }}}
+
+local illuminated = {
+  illuminatedWord = {
+    cterm = 'underline',
+    gui = 'underline',
+  },
+}
+
+apply_highlight(illuminated)
 
 -- }}}
 
