@@ -774,10 +774,10 @@ apply_highlight(illuminated)
 -- LSP {{{
 
 local msg_underline = {
-	ErrorMsgUnderline = { fg = red, gui = 'undercurl' },
-	WarningMsgUnderline = { fg = yellow, gui = 'undercurl' },
-	MoreMsgUnderline = { fg = blue, gui = 'undercurl' },
-	MsgUnderline = { fg = green, gui = 'undercurl' },
+	ErrorMsgUnderline = { fg = red, gui = 'underline' },
+	WarningMsgUnderline = { fg = yellow, gui = 'underline' },
+	MoreMsgUnderline = { fg = blue, gui = 'underline' },
+	MsgUnderline = { fg = green, gui = 'underline' },
 }
 
 apply_highlight(msg_underline)
