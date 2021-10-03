@@ -303,6 +303,7 @@ local search_high_ui = {
 
 	Highlight = { bg = bg_highlighted },
 	HighlightSubtle = { bg = bg_highlighted },
+	LspHighlight = { bg = bg_highlight, style = 'bold' },
 
 	Question = { fg = green, gui = 'bold' },
 
@@ -821,9 +822,9 @@ high_link('DiagnosticSignError', 'ErrorMsg')
 high_link('DiagnosticSignWarning', 'WarningMsg')
 high_link('DiagnosticSignInformation', 'MoreMsg')
 high_link('DiagnosticSignHint', 'Msg')
-high_link('LspReferenceText', 'Bold')
-high_link('LspReferenceRead', 'Bold')
-high_link('LspReferenceWrite', 'Bold')
+high_link('LspReferenceText', 'LspHighlight')
+high_link('LspReferenceRead', 'LspHighlight')
+high_link('LspReferenceWrite', 'LspHighlight')
 high_link('TermCursor', 'Cursor')
 high_link('healthError', 'ErrorMsg')
 high_link('healthSuccess', 'Msg')
