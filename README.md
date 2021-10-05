@@ -15,6 +15,8 @@ This colorscheme is ported from [doom-emacs' doom-one].
 
 ## Notices
 
+- `2021-10-05`: doom-one configurations are now defined in a `setup` function,
+  see [Install](#install) to know the valid setup options.
 - `2021-06-16`: since the colorscheme is now 100% lua, your neovim must include
   [this](https://github.com/neovim/neovim/pull/14686).
 
@@ -24,28 +26,46 @@ This colorscheme is ported from [doom-emacs' doom-one].
 - Optional italic comments
 - Optional TreeSitter support
 - Optional transparent background
-- Support for numerous plugins (nvim-tree, barbar, lspsaga, etc)
+- Optional support for numerous plugins (nvim-tree, barbar, lspsaga, etc)
 
 ## Install
 
 Packer
-```vim
-use 'NTBBloodbath/doom-one.nvim'
+```lua
+use({
+    'NTBBloodbath/doom-one.nvim',
+    setup = function()
+        require('doom-one').setup({
+            cursor_coloring = false,
+            terminal_colors = false,
+            italic_comments = false,
+            enable_treesitter = true,
+            transparent_background = false,
+            pumblend = {
+                enable = true,
+                transparency_amount = 20,
+            },
+            plugins_integrations = {
+                barbar = true,
+                bufferline = false,
+                gitgutter = false,
+                gitsigns = true,
+                telescope = false,
+                neogit = true,
+                nvim_tree = true,
+                dashboard = true,
+                startify = true,
+                whichkey = true,
+                indent_blankline = true,
+                vim_illuminate = true,
+                lspsaga = false,
+            },
+        })
+    end,
+})
 ```
 
 > **IMPORTANT:** this colorscheme requires Neovim >= 0.5 to work.
-
-## Options
-
-- `doom_one_enable_treesitter` - Enable TreeSitter support, `v:true` by default.
-- `doom_one_terminal_colors` - Enable terminal colors, `v:false` by default.
-- `doom_one_italic_comments` - Enable italic comments, `v:false` by default.
-- `doom_one_transparent_background` - Enable transparent background, `v:false` by default.
-- `doom_one_cursor_coloring` - Enable cursor coloring (blue), `v:false` by default.
-- `doom_one_telescope_highlights` - Enable telescope highlighting, `v:true` by default
-
-> **NOTE:** All those options are global Vim variables and uses `v:true` / `v:false` instead of `1` / `0`.
-> So if you're using Lua you will need to use `true` / `false`.
 
 ## Screenshots
 
