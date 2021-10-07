@@ -24,21 +24,6 @@ doom_one.setup = function(user_configs)
     doom_one.load_colorscheme()
 end
 
--- Customization variables {{{
-
-local transparent_bg = configuration.transparent_background
-
-if configuration.cursor_coloring then
-	vim.opt.guicursor =
-		'n-v-c:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor25-Cursor'
-end
-
-if configuration.pumblend.enable then
-    vim.opt.pumblend = configuration.pumblend.transparency_amount
-end
-
--- }}}
-
 -- Highlight Functions and Color definitions {{{
 
 local function high_clear(group)
@@ -208,6 +193,22 @@ end
 
 --- Load the colorscheme
 doom_one.load_colorscheme = function()
+
+    -- Customization variables {{{
+
+    local transparent_bg = configuration.transparent_background
+
+    if configuration.cursor_coloring then
+      vim.opt.guicursor =
+        'n-v-c:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor25-Cursor'
+    end
+
+    if configuration.pumblend.enable then
+        vim.opt.pumblend = configuration.pumblend.transparency_amount
+    end
+
+    -- }}}
+
     -- General UI {{{
 
     local general_ui = {
