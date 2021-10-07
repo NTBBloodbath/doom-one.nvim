@@ -6,4 +6,4 @@ end
 vim.g['colors_name'] = 'doom-one'
 
 package.loaded['doom-one'] = nil
-require('doom-one')
+require('doom-one').load_colorscheme()
