@@ -597,6 +597,24 @@ doom_one.load_colorscheme = function()
 
     -- }}}
 
+    -- Cmp {{{
+
+    if configuration.plugins_integrations.cmp then
+		local cmp = {
+			CmpItemAbbrMatch = {fg=blue,bg="NONE"},
+			CmpItemAbbrMatchFuzzy = {fg=blue,bg="NONE"},
+		}
+		apply_highlight(cmp)
+		high_link('CmpDocumentation', 'TSVariable')
+		high_link('CmpDocumentationBorder', 'TSVariable')
+		high_link('CmpItemAbbr', 'TSVariable')
+		high_link('CmpItemAbbrDeprecated', 'TSComment')
+		high_link('CmpItemKind', 'TSConstMacro')
+		high_link('CmpItemMenu', 'TSComment')
+    end
+
+    -- }}}
+
     -- Gitgutter {{{
 
     if configuration.plugins_integrations.gitgutter then
