@@ -34,7 +34,7 @@ Packer
 ```lua
 use({
     'NTBBloodbath/doom-one.nvim',
-    setup = function()
+    config = function()
         require('doom-one').setup({
             cursor_coloring = false,
             terminal_colors = false,
