@@ -22,6 +22,10 @@ doom_one.setup = function(user_configs)
     configuration = config.set(user_configs or {})
     -- Reload colorscheme with user configurations override
     doom_one.load_colorscheme()
+    -- Tell Neovim that highlights changed again, this should fix
+    -- issues with user_defined highlights being overrided.
+    -- FIXME: this should be refactored soon and we should stop loading colorscheme twice
+    vim.cmd('doautocmd Colorscheme doom-one')
 end
 
 -- Highlight Functions and Color definitions {{{
