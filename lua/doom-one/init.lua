@@ -22,6 +22,10 @@ doom_one.setup = function(user_configs)
     configuration = config.set(user_configs or {})
     -- Reload colorscheme with user configurations override
     doom_one.load_colorscheme()
+    -- Tell Neovim that highlights changed again, this should fix
+    -- issues with user_defined highlights being overrided.
+    -- FIXME: this should be refactored soon and we should stop loading colorscheme twice
+    vim.cmd('doautocmd Colorscheme doom-one')
 end
 
 -- Highlight Functions and Color definitions {{{
@@ -481,6 +485,18 @@ doom_one.load_colorscheme = function()
 
     -- Plugins {{{
 
+    -- netrw {{{
+    local netrw = {
+        netrwClassify = { fg = blue },
+        netrwDir = { fg = blue },
+        netrwExe = { fg = green },
+        netrwMakefile = { fg = yellow },
+    }
+
+   apply_highlight(netrw)
+   high_link("netrwTreeBar", "Comment")
+   -- }}}
+
     -- barbar.nvim {{{
 
     if configuration.plugins_integrations.barbar then
@@ -925,6 +941,10 @@ doom_one.load_colorscheme = function()
     high_link('DiagnosticSignWarning', 'WarningMsg')
     high_link('DiagnosticSignInformation', 'MoreMsg')
     high_link('DiagnosticSignHint', 'Msg')
+    high_link('DiagnosticVirtualTextError', 'ErrorMsg')
+    high_link('DiagnosticVirtualTextWarn', 'WarningMsg')
+    high_link('DiagnosticVirtualTextInfo', 'MoreMsg')
+    high_link('DiagnosticVirtualTextHint', 'TextMuted')
     high_link('LspReferenceText', 'LspHighlight')
     high_link('LspReferenceRead', 'LspHighlight')
     high_link('LspReferenceWrite', 'LspHighlight')
