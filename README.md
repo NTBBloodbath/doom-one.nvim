@@ -68,6 +68,11 @@ use({
 
 > **IMPORTANT:** this colorscheme requires Neovim >= 0.5 to work.
 
+## Extras
+
+Extra color configs for [kitty] can be found in [extras](extras/). To use them,
+refer to their respective documentation.
+
 ## Screenshots
 
 > Dark variant:
@@ -91,3 +96,4 @@ use({
 `doom-one.nvim` is [MIT licensed](./LICENSE).
 
 [doom-emacs' doom-one]: https://github.com/hlissner/emacs-doom-themes/blob/master/themes/doom-one-theme.el
+[kitty]: https://github.com/kovidgoyal/kitty
