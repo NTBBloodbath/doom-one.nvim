@@ -43,9 +43,10 @@ local function highlight(group, styles)
 	local fg = styles.fg and 'guifg=' .. styles.fg or 'guifg=NONE'
 	local sp = styles.sp and 'guisp=' .. styles.sp or 'guisp=NONE'
 	local gui = styles.gui and 'gui=' .. styles.gui or 'gui=NONE'
+	local guisp = styles.guisp and 'guisp=' .. styles.guisp or 'guisp=NONE'
 
 	vim.api.nvim_command(
-		'hi! ' .. group .. ' ' .. bg .. ' ' .. fg .. ' ' .. sp .. ' ' .. gui
+		'hi! ' .. group .. ' ' .. bg .. ' ' .. fg .. ' ' .. sp .. ' ' .. gui .. ' ' .. guisp
 	)
 end
 
@@ -876,11 +877,19 @@ doom_one.load_colorscheme = function()
     -- LSP {{{
 
     local msg_underline = {
-	    ErrorMsgUnderline = { fg = red, gui = 'underline' },
-	    WarningMsgUnderline = { fg = yellow, gui = 'underline' },
-	    MoreMsgUnderline = { fg = blue, gui = 'underline' },
-	    MsgUnderline = { fg = green, gui = 'underline' },
+	    ErrorMsgUnderline = { guisp = red, gui = 'underline' },
+	    WarningMsgUnderline = { guisp = yellow, gui = 'underline' },
+	    MoreMsgUnderline = { guisp = blue, gui = 'underline' },
+	    MsgUnderline = { guisp = green, gui = 'underline' },
     }
+    if configuration.diagnostics_color_text then 
+	    msg_underline = {
+		    ErrorMsgUnderline = { fg = red, gui = 'underline' },
+		    WarningMsgUnderline = { fg = yellow, gui = 'underline' },
+		    MoreMsgUnderline = { fg = blue, gui = 'underline' },
+		    MsgUnderline = { fg = green, gui = 'underline' },
+	    }
+    end
 
     apply_highlight(msg_underline)
     high_link('LspDiagnosticsFloatingError', 'ErrorMsg')
