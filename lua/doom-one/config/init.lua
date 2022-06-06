@@ -7,6 +7,7 @@ local configuration = {
     italic_comments = false,
     enable_treesitter = true,
     transparent_background = false,
+    diagnostics_color_text = true,
     pumblend = {
         enable = true,
         transparency_amount = 20,
