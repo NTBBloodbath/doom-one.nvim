@@ -15,6 +15,7 @@ local configuration = {
         neorg = true,
         barbar = true,
         bufferline = false,
+        cmp = true,
         gitgutter = false,
         gitsigns = true,
         telescope = false,
