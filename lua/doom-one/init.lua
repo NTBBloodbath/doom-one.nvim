@@ -61,6 +61,8 @@ doom_one.set_colorscheme = function()
 	local current_bg = vim.opt.background:get()
 	local palette = colors.get_palette(current_bg)
 
+  local dark_theme = current_bg == "dark"
+
 	--- GENERAL UI
 	-----------------
 	set_hl("Normal", { bg = config.ui.transparent_background and "NONE" or palette.bg, fg = palette.fg })
@@ -101,16 +103,16 @@ doom_one.set_colorscheme = function()
 	set_hl("TabLineSel", { bg = "bg", fg = palette.blue, bold = true })
 	set_hl("TabLineFill", { bg = palette.base1, bold = true })
 
-	set_hl("StatusLine", { bg = current_bg == "dark" and palette.base3 or palette.base2, fg = palette.base8 })
+	set_hl("StatusLine", { bg = dark_theme and palette.base3 or palette.base2, fg = palette.base8 })
 	set_hl("StatusLineNC", { bg = palette.bg_alt, fg = palette.base6 })
 	set_hl("StatusLinePart", { bg = palette.bg_alt, fg = palette.base6, bold = true })
 	set_hl("StatusLinePartNC", { link = "StatusLinePart" })
 
 	set_hl("Pmenu", { bg = palette.bg_alt, fg = "fg" })
-	set_hl("PmenuSel", { bg = palette.blue, fg = current_bg == "dark" and palette.base0 or palette.base8 })
+	set_hl("PmenuSel", { bg = palette.blue, fg = dark_theme and palette.base0 or palette.base8 })
 	set_hl(
 		"PmenuSelBold",
-		{ bg = palette.blue, fg = current_bg == "dark" and palette.base0 or palette.base8, bold = true }
+		{ bg = palette.blue, fg = dark_theme and palette.base0 or palette.base8, bold = true }
 	)
 	set_hl("PmenuSbar", { bg = palette.bg_alt })
 	set_hl("PmenuThumb", { fg = "fg" })
@@ -150,7 +152,7 @@ doom_one.set_colorscheme = function()
 		Debug = palette.yellow,
 		Error = palette.red,
 		Special = palette.violet,
-		Muted = current_bg == "dark" and palette.base7 or palette.base5,
+		Muted = dark_theme and palette.base7 or palette.base5,
 	}
 
 	for group, hl in pairs(text_colors) do
@@ -181,10 +183,10 @@ doom_one.set_colorscheme = function()
 
 	set_hl(
 		"Comment",
-		{ fg = current_bg == "dark" and palette.base5 or palette.base4, italic = config.ui.italic_comments }
+		{ fg = dark_theme and palette.base5 or palette.base4, italic = config.ui.italic_comments }
 	)
-	set_hl("CommentBold", { fg = current_bg == "dark" and palette.base5 or palette.base4, bold = true })
-	set_hl("SpecialComment", { fg = current_bg == "dark" and palette.base7 or palette.base5, bold = true })
+	set_hl("CommentBold", { fg = dark_theme and palette.base5 or palette.base4, bold = true })
+	set_hl("SpecialComment", { fg = dark_theme and palette.base7 or palette.base5, bold = true })
 
 	set_hl("Macro", { fg = palette.violet })
 	set_hl("Define", { fg = palette.violet, bold = true })
@@ -192,14 +194,14 @@ doom_one.set_colorscheme = function()
 	set_hl("PreProc", { fg = palette.violet, bold = true })
 	set_hl("PreCondit", { fg = palette.violet, bold = true })
 
-	set_hl("Label", { fg = current_bg == "dark" and palette.blue or palette.red })
-	set_hl("Repeat", { fg = current_bg == "dark" and palette.blue or palette.red })
-	set_hl("Keyword", { fg = current_bg == "dark" and palette.blue or palette.red })
-	set_hl("Operator", { fg = current_bg == "dark" and palette.blue or palette.red })
-	set_hl("Delimiter", { fg = current_bg == "dark" and palette.blue or palette.red })
-	set_hl("Statement", { fg = current_bg == "dark" and palette.blue or palette.red })
-	set_hl("Exception", { fg = current_bg == "dark" and palette.blue or palette.red })
-	set_hl("Conditional", { fg = current_bg == "dark" and palette.blue or palette.red })
+	set_hl("Label", { fg = dark_theme and palette.blue or palette.red })
+	set_hl("Repeat", { fg = dark_theme and palette.blue or palette.red })
+	set_hl("Keyword", { fg = dark_theme and palette.blue or palette.red })
+	set_hl("Operator", { fg = dark_theme and palette.blue or palette.red })
+	set_hl("Delimiter", { fg = dark_theme and palette.blue or palette.red })
+	set_hl("Statement", { fg = dark_theme and palette.blue or palette.red })
+	set_hl("Exception", { fg = dark_theme and palette.blue or palette.red })
+	set_hl("Conditional", { fg = dark_theme and palette.blue or palette.red })
 
 	set_hl("Variable", { fg = utils.darken(palette.magenta, 0.36) })
 	set_hl("VariableBuiltin", { fg = palette.magenta, bold = true })
@@ -211,7 +213,7 @@ doom_one.set_colorscheme = function()
 	set_hl("Enum", { fg = palette.orange })
 
 	set_hl("Characer", { fg = palette.violet, bold = true })
-	set_hl("SpecialChar", { fg = current_bg == "dark" and palette.base8 or palette.base1, bold = true })
+	set_hl("SpecialChar", { fg = dark_theme and palette.base8 or palette.base1, bold = true })
 	set_hl("String", { fg = palette.green })
 	set_hl("StringDelimiter", { link = "String" })
 
@@ -221,31 +223,31 @@ doom_one.set_colorscheme = function()
 	set_hl("Field", { fg = palette.violet })
 	set_hl(
 		"Argument",
-		{ fg = current_bg == "dark" and utils.lighten(palette.magenta, 0.4) or utils.darken(palette.magenta, 0.36) }
+		{ fg = dark_theme and utils.lighten(palette.magenta, 0.4) or utils.darken(palette.magenta, 0.36) }
 	)
 	set_hl(
 		"Atrribute",
-		{ fg = current_bg == "dark" and utils.lighten(palette.magenta, 0.4) or utils.darken(palette.magenta, 0.36) }
+		{ fg = dark_theme and utils.lighten(palette.magenta, 0.4) or utils.darken(palette.magenta, 0.36) }
 	)
 	set_hl(
 		"Identifier",
-		{ fg = current_bg == "dark" and utils.lighten(palette.magenta, 0.4) or utils.darken(palette.magenta, 0.36) }
+		{ fg = dark_theme and utils.lighten(palette.magenta, 0.4) or utils.darken(palette.magenta, 0.36) }
 	)
 	set_hl("Property", { fg = palette.magenta })
 	set_hl("Function", { fg = palette.magenta })
 	set_hl("FunctionBuiltin", {
-		fg = current_bg == "dark" and utils.lighten(palette.magenta, 0.4) or utils.darken(palette.magenta, 0.36),
+		fg = dark_theme and utils.lighten(palette.magenta, 0.4) or utils.darken(palette.magenta, 0.36),
 		bold = true,
 	})
-	set_hl("KeywordFunction", { fg = current_bg == "dark" and palette.blue or palette.red, bold = true })
-	set_hl("Method", { fg = current_bg == "dark" and palette.violet or palette.cyan })
+	set_hl("KeywordFunction", { fg = dark_theme and palette.blue or palette.red, bold = true })
+	set_hl("Method", { fg = dark_theme and palette.violet or palette.cyan })
 
 	set_hl("Type", { fg = palette.yellow })
-	set_hl("Typedef", { fg = current_bg == "dark" and palette.blue or palette.red })
+	set_hl("Typedef", { fg = dark_theme and palette.blue or palette.red })
 	set_hl("TypeBuiltin", { fg = palette.yellow, bold = true })
-	set_hl("Class", { fg = current_bg == "dark" and palette.blue or palette.red })
-	set_hl("StorageClass", { fg = current_bg == "dark" and palette.blue or palette.red })
-	set_hl("Structure", { fg = current_bg == "dark" and palette.blue or palette.red })
+	set_hl("Class", { fg = dark_theme and palette.blue or palette.red })
+	set_hl("StorageClass", { fg = dark_theme and palette.blue or palette.red })
+	set_hl("Structure", { fg = dark_theme and palette.blue or palette.red })
 
 	set_hl("Regexp", { fg = "#dd0093" })
 	set_hl("RegexpSpecial", { fg = "#a40073" })
@@ -320,7 +322,7 @@ doom_one.set_colorscheme = function()
 	---------------
 	if config.ui.enable_treesitter then
 		set_hl("TSStrike", {
-			fg = current_bg == "dark" and utils.darken(palette.violet, 0.2) or utils.lighten(palette.violet, 0.26),
+			fg = dark_theme and utils.darken(palette.violet, 0.2) or utils.lighten(palette.violet, 0.26),
 			strikethrough = true,
 		})
 
@@ -396,7 +398,7 @@ doom_one.set_colorscheme = function()
   ------------------------
   if config.plugins.indent_blankline then
     set_hl("IndentBlanklineChar", { fg = palette.base4, nocombine = true })
-    set_hl("IndentBlanklineContextChar", { fg = current_bg == "dark" and palette.blue or palette.orange, nocombine = true })
+    set_hl("IndentBlanklineContextChar", { fg = dark_theme and palette.blue or palette.orange, nocombine = true })
     set_hl("IndentBlanklineSpaceChar", { link = "IndentBlanklineChar" })
     set_hl("IndentBlanklineSpaceCharBlankline", { link = "IndentBlanklineChar" })
   end
