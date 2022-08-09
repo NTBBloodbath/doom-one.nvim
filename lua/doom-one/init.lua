@@ -61,7 +61,7 @@ doom_one.set_colorscheme = function()
 	local current_bg = vim.opt.background:get()
 	local palette = colors.get_palette(current_bg)
 
-  local dark_theme = current_bg == "dark"
+	local dark_theme = current_bg == "dark"
 
 	--- GENERAL UI
 	-----------------
@@ -110,10 +110,7 @@ doom_one.set_colorscheme = function()
 
 	set_hl("Pmenu", { bg = palette.bg_alt, fg = "fg" })
 	set_hl("PmenuSel", { bg = palette.blue, fg = dark_theme and palette.base0 or palette.base8 })
-	set_hl(
-		"PmenuSelBold",
-		{ bg = palette.blue, fg = dark_theme and palette.base0 or palette.base8, bold = true }
-	)
+	set_hl("PmenuSelBold", { bg = palette.blue, fg = dark_theme and palette.base0 or palette.base8, bold = true })
 	set_hl("PmenuSbar", { bg = palette.bg_alt })
 	set_hl("PmenuThumb", { bg = palette.grey })
 
@@ -181,10 +178,7 @@ doom_one.set_colorscheme = function()
 	set_hl("URL", { link = "Link" })
 	set_hl("Underlined", { fg = utils.mix(palette.blue, palette.cyan, 0.5), underline = true })
 
-	set_hl(
-		"Comment",
-		{ fg = dark_theme and palette.base5 or palette.base4, italic = config.ui.italic_comments }
-	)
+	set_hl("Comment", { fg = dark_theme and palette.base5 or palette.base4, italic = config.ui.italic_comments })
 	set_hl("CommentBold", { fg = dark_theme and palette.base5 or palette.base4, bold = true })
 	set_hl("SpecialComment", { fg = dark_theme and palette.base7 or palette.base5, bold = true })
 
@@ -371,13 +365,13 @@ doom_one.set_colorscheme = function()
 		set_hl("TSVariableBuiltin", { link = "VariableBuiltin" })
 	end
 
-  --- NetRW
-  ---------
-  set_hl("netrwClassify", { fg = palette.blue })
-  set_hl("netrwDir", { link = "Directory" })
-  set_hl("netrwExe", { fg = palette.green, bold = true })
-  set_hl("netrwMakefile", { fg = palette.yellow, bold = true })
-  set_hl("netrwTreeBar", { link = "Comment" })
+	--- NetRW
+	---------
+	set_hl("netrwClassify", { fg = palette.blue })
+	set_hl("netrwDir", { link = "Directory" })
+	set_hl("netrwExe", { fg = palette.green, bold = true })
+	set_hl("netrwMakefile", { fg = palette.yellow, bold = true })
+	set_hl("netrwTreeBar", { link = "Comment" })
 
 	--- Terminal colors
 	-------------------
@@ -402,29 +396,29 @@ doom_one.set_colorscheme = function()
 		vim.g.terminal_color_foreground = palette.fg_alt
 	end
 
-  --- Plugins integrations
-  ------------------------
-  if config.plugins.indent_blankline then
-    set_hl("IndentBlanklineChar", { fg = palette.base4, nocombine = true })
-    set_hl("IndentBlanklineContextChar", { fg = dark_theme and palette.blue or palette.orange, nocombine = true })
-    set_hl("IndentBlanklineSpaceChar", { link = "IndentBlanklineChar" })
-    set_hl("IndentBlanklineSpaceCharBlankline", { link = "IndentBlanklineChar" })
-  end
+	--- Plugins integrations
+	------------------------
+	if config.plugins.indent_blankline then
+		set_hl("IndentBlanklineChar", { fg = palette.base4, nocombine = true })
+		set_hl("IndentBlanklineContextChar", { fg = dark_theme and palette.blue or palette.orange, nocombine = true })
+		set_hl("IndentBlanklineSpaceChar", { link = "IndentBlanklineChar" })
+		set_hl("IndentBlanklineSpaceCharBlankline", { link = "IndentBlanklineChar" })
+	end
 
-  if config.plugins.neorg then
-    set_hl("NeorgMarkupVerbatim", { link = "Comment" })
+	if config.plugins.neorg then
+		set_hl("NeorgMarkupVerbatim", { link = "Comment" })
 
-    -- Colors are for nested quotes
-    set_hl("Blue", { fg = palette.blue })
-    set_hl("Yellow", { fg = palette.yellow })
-    set_hl("Red", { fg = palette.red })
-    set_hl("Green", { fg = palette.green })
-    set_hl("Brown", { fg = palette.orange })
-  end
+		-- Colors are for nested quotes
+		set_hl("Blue", { fg = palette.blue })
+		set_hl("Yellow", { fg = palette.yellow })
+		set_hl("Red", { fg = palette.red })
+		set_hl("Green", { fg = palette.green })
+		set_hl("Brown", { fg = palette.orange })
+	end
 
-  if config.plugins.vim_illuminate then
-    set_hl("illuminatedWord", { underline = true })
-  end
+	if config.plugins.vim_illuminate then
+		set_hl("illuminatedWord", { underline = true })
+	end
 end
 
 return doom_one
