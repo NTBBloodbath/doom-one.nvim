@@ -101,7 +101,7 @@ doom_one.set_colorscheme = function()
 	set_hl("TabLineSel", { bg = "bg", fg = palette.blue, bold = true })
 	set_hl("TabLineFill", { bg = palette.base1, bold = true })
 
-	set_hl("StatusLine", { bg = palette.base3, fg = palette.base8 })
+	set_hl("StatusLine", { bg = current_bg == "dark" and palette.base3 or palette.base2, fg = palette.base8 })
 	set_hl("StatusLineNC", { bg = palette.bg_alt, fg = palette.base6 })
 	set_hl("StatusLinePart", { bg = palette.bg_alt, fg = palette.base6, bold = true })
 	set_hl("StatusLinePartNC", { link = "StatusLinePart" })
