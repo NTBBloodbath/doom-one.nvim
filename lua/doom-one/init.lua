@@ -371,6 +371,14 @@ doom_one.set_colorscheme = function()
 		set_hl("TSVariableBuiltin", { link = "VariableBuiltin" })
 	end
 
+  --- NetRW
+  ---------
+  set_hl("netrwClassify", { fg = palette.blue })
+  set_hl("netrwDir", { link = "Directory" })
+  set_hl("netrwExe", { fg = palette.green, bold = true })
+  set_hl("netrwMakefile", { fg = palette.yellow, bold = true })
+  set_hl("netrwTreeBar", { link = "Comment" })
+
 	--- Terminal colors
 	-------------------
 	if config.ui.terminal_colors then
@@ -401,6 +409,21 @@ doom_one.set_colorscheme = function()
     set_hl("IndentBlanklineContextChar", { fg = dark_theme and palette.blue or palette.orange, nocombine = true })
     set_hl("IndentBlanklineSpaceChar", { link = "IndentBlanklineChar" })
     set_hl("IndentBlanklineSpaceCharBlankline", { link = "IndentBlanklineChar" })
+  end
+
+  if config.plugins.neorg then
+    set_hl("NeorgMarkupVerbatim", { link = "Comment" })
+
+    -- Colors are for nested quotes
+    set_hl("Blue", { fg = palette.blue })
+    set_hl("Yellow", { fg = palette.yellow })
+    set_hl("Red", { fg = palette.red })
+    set_hl("Green", { fg = palette.green })
+    set_hl("Brown", { fg = palette.orange })
+  end
+
+  if config.plugins.vim_illuminate then
+    set_hl("illuminatedWord", { underline = true })
   end
 end
 
