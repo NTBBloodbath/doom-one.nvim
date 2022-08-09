@@ -207,7 +207,10 @@ doom_one.set_colorscheme = function()
 	set_hl("Enum", { fg = palette.orange })
 
 	set_hl("Characer", { fg = palette.violet, bold = true })
-	set_hl("SpecialChar", { fg = dark_theme and utils.darken(palette.violet, 0.15) or utils.lighten(palette.violet, 0.26), bold = true })
+	set_hl(
+		"SpecialChar",
+		{ fg = dark_theme and utils.darken(palette.violet, 0.15) or utils.lighten(palette.violet, 0.26), bold = true }
+	)
 	set_hl("String", { fg = palette.green })
 	set_hl("StringDelimiter", { link = "String" })
 
@@ -419,6 +422,85 @@ doom_one.set_colorscheme = function()
 	if config.plugins.vim_illuminate then
 		set_hl("illuminatedWord", { underline = true })
 	end
+
+	if config.plugins.barbar then
+		set_hl("BufferCurrent", { bg = "bg", fg = dark_theme and palette.base8 or palette.base0 })
+		set_hl("BufferCurrentIndex", { bg = "bg", fg = palette.base6 })
+		set_hl("BufferCurrentMod", { bg = "bg", fg = palette.yellow })
+		set_hl("BufferCurrentSign", { bg = "bg", fg = palette.blue })
+		set_hl("BufferCurrentTarget", { bg = "bg", fg = palette.red, bold = true })
+
+		set_hl("BufferVisible", { fg = palette.base7, bg = "bg" })
+		set_hl("BufferVisibleIndex", { fg = palette.base6, bg = "bg" })
+		set_hl("BufferVisibleMod", { fg = palette.yellow, bg = "bg" })
+		set_hl("BufferVisibleSign", { fg = palette.base4, bg = "bg" })
+		set_hl("BufferVisibleTarget", { fg = palette.red, bg = "bg", bold = true })
+
+		set_hl("BufferInactive", { fg = palette.base6, bg = dark_theme and palette.base1 or palette.base8 })
+		set_hl("BufferInactiveIndex", { fg = palette.base6, bg = dark_theme and palette.base1 or palette.base8 })
+		set_hl("BufferInactiveMod", { fg = palette.yellow, bg = dark_theme and palette.base1 or palette.base8 })
+		set_hl("BufferInactiveSign", { fg = palette.base4, bg = dark_theme and palette.base1 or palette.base8 })
+		set_hl(
+			"BufferInactiveTarget",
+			{ fg = palette.red, bg = dark_theme and palette.base1 or palette.base8, bold = true }
+		)
+
+		set_hl("BufferTabpages", { fg = palette.blue, bg = palette.bg_alt, bold = true })
+		set_hl(
+			"BufferTabpageFill",
+			{ fg = palette.base4, bg = dark_theme and palette.base1 or palette.base8, bold = true }
+		)
+
+		set_hl("BufferPart", { fg = palette.fg_alt, bg = palette.bg_alt, bold = true })
+	end
+
+	if config.plugins.telescope then
+		set_hl("TelescopeNormal", { fg = "fg" })
+		set_hl("TelescopeBorder", { fg = dark_theme and palette.blue or palette.red })
+		set_hl("TelescopePrompt", { link = "TelescopeNormal" })
+		set_hl("TelescopePromptBorder", { link = "TelescopeBorder" })
+		set_hl("TelescopePromptPrefix", { fg = dark_theme and palette.blue or palette.red })
+		set_hl("TelescopeResultsBorder", { link = "TelescopeBorder" })
+		set_hl("TelescopePreviewBorder", { link = "TelescopeBorder" })
+		set_hl("TelescopeMatching", { fg = palette.violet, bold = true })
+		set_hl("TelescopeSelection", { link = "VisualBold" })
+		set_hl("TelescopeSelectionCaret", { fg = dark_theme and palette.blue or palette.red })
+	end
+
+	if config.plugins.neogit then
+		set_hl("NeogitDiffAdd", { bg = "#e9f1e8", fg = "#40803f" })
+		set_hl("NeogitDiffAddHighlight", { bg = "#d8e8d7", fg = palette.green, bold = true })
+		set_hl("NeogitDiffDelete", { bg = "#f7e9e8", fg = "#cc5655" })
+		set_hl("NeogitDiffDeleteHighlight", { bg = "#f5d9d6", fg = palette.red, bold = true })
+		set_hl("NeogitDiffContext", { bg = "bg", fg = palette.fg_alt })
+		set_hl("NeogitDiffContextHighlight", { bg = palette.bg_alt, fg = "fg", bold = true })
+		set_hl(
+			"NeogitHunkHeader",
+			{ bg = dark_theme and utils.darken(palette.violet, 0.2) or utils.lighten(palette.violet, 0.16), fg = "bg" }
+		)
+		set_hl("NeogitHunkHeaderHighlight", { bg = palette.violet, fg = palette.bg_alt, bold = true })
+		set_hl("NeogitStagedChanges", { fg = dark_theme and palette.blue or palette.orange, bold = true })
+		set_hl("NeogitStagedChangesRegion", { bg = palette.bg_alt })
+		set_hl("NeogitStashes", { fg = dark_theme and palette.blue or palette.orange, bold = true })
+		set_hl("NeogitUnstagedChanges", { fg = dark_theme and palette.blue or palette.orange, bold = true })
+		set_hl("NeogitUntrackedfiles", { fg = dark_theme and palette.blue or palette.orange, bold = true })
+	end
+
+  if config.plugins.dashboard then
+    set_hl("dashboardHeader", { fg = palette.grey })
+    set_hl("dashboardFooter", { link = "dashboardHeader" })
+    set_hl("dashboardCenter", { fg = dark_theme and palette.blue or palette.orange })
+    set_hl("dashboardShortcut", { fg = palette.violet })
+  end
+
+  if config.plugins.startify then
+    set_hl("StartifyHeader", { fg = palette.fg_alt })
+    set_hl("StartifyBracket", { fg = palette.grey })
+    set_hl("StartifyNumber", { fg = dark_theme and palette.blue or palette.orange })
+    set_hl("StartifyPath", { fg = palette.violet })
+    set_hl("StartifySlash", { link = "StartifyPath" })
+    set_hl("StartifyFile", { fg = palette.green })
+  end
 end
 
 return doom_one
