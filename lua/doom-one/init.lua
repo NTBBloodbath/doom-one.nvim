@@ -207,7 +207,7 @@ doom_one.set_colorscheme = function()
 	set_hl("Enum", { fg = palette.orange })
 
 	set_hl("Characer", { fg = palette.violet, bold = true })
-	set_hl("SpecialChar", { fg = dark_theme and palette.base8 or palette.base1, bold = true })
+	set_hl("SpecialChar", { fg = dark_theme and utils.darken(palette.violet, 0.15) or utils.lighten(palette.violet, 0.26), bold = true })
 	set_hl("String", { fg = palette.green })
 	set_hl("StringDelimiter", { link = "String" })
 
