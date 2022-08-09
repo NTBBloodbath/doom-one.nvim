@@ -14,7 +14,8 @@
 This colorscheme is ported from [doom-emacs' doom-one].
 
 ## Notices
-
+- `2022-08-08`: doom-one is now using Neovim global variables for configurations again.
+  It is using the same configuration options, see [Install](#install).
 - `2021-10-05`: doom-one configurations are now defined in a `setup` function,
   see [Install](#install) to know the valid setup options.
 - `2021-06-16`: since the colorscheme is now 100% lua, your neovim must include
@@ -34,39 +35,42 @@ Packer
 ```lua
 use({
     'NTBBloodbath/doom-one.nvim',
-    config = function()
-        require('doom-one').setup({
-            cursor_coloring = false,
-            terminal_colors = false,
-            italic_comments = false,
-            enable_treesitter = true,
-            transparent_background = false,
-            pumblend = {
-                enable = true,
-                transparency_amount = 20,
-            },
-            plugins_integrations = {
-                neorg = true,
-                barbar = true,
-                bufferline = false,
-                gitgutter = false,
-                gitsigns = true,
-                telescope = false,
-                neogit = true,
-                nvim_tree = true,
-                dashboard = true,
-                startify = true,
-                whichkey = true,
-                indent_blankline = true,
-                vim_illuminate = true,
-                lspsaga = false,
-            },
-        })
+    setup = function()
+        -- Add color to cursor
+		vim.g.doom_one_cursor_coloring = false
+		-- Set :terminal colors
+		vim.g.doom_one_terminal_colors = true
+		-- Enable italic comments
+		vim.g.doom_one_italic_comments = false
+		-- Enable TS support
+		vim.g.doom_one_enable_treesitter = true
+		-- Enable transparent background
+		vim.g.doom_one_transparent_background = false
+
+        -- Pumblend transparency
+		vim.g.doom_one_pumblend_enable = false
+		vim.g.doom_one_pumblend_transparency = 20
+
+        -- Plugins integration
+		vim.g.doom_one_plugin_neorg = true
+		vim.g.doom_one_plugin_barbar = false
+		vim.g.doom_one_plugin_telescope = false
+		vim.g.doom_one_plugin_neogit = true
+		vim.g.doom_one_plugin_nvim_tree = true
+		vim.g.doom_one_plugin_dashboard = true
+		vim.g.doom_one_plugin_startify = true
+		vim.g.doom_one_plugin_whichkey = true
+		vim.g.doom_one_plugin_indent_blankline = true
+		vim.g.doom_one_plugin_vim_illuminate = true
+		vim.g.doom_one_plugin_lspsaga = false
+	end,
+	config = function()
+        vim.cmd("colorscheme doom-one")
     end,
 })
 ```
 
-> **IMPORTANT:** this colorscheme requires Neovim >= 0.5 to work.
+> **IMPORTANT:** this colorscheme requires Neovim >= 0.6 to work.
 
 ## Extras
 
