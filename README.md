@@ -44,6 +44,8 @@ use({
 		vim.g.doom_one_italic_comments = false
 		-- Enable TS support
 		vim.g.doom_one_enable_treesitter = true
+		-- Color whole diagnostic text or only underline
+        vim.g.doom_one_diagnostics_text_color = false
 		-- Enable transparent background
 		vim.g.doom_one_transparent_background = false
 

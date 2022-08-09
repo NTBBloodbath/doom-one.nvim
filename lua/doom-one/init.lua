@@ -17,6 +17,7 @@ local config = {
 		terminal_colors = vim.g.doom_one_terminal_colors or true,
 		italic_comments = vim.g.doom_one_italic_comments or false,
 		enable_treesitter = vim.g.doom_one_enable_treesitter or true,
+		diagnostics_text_color = vim.g.doom_one_diagnostics_text_color or false,
 		transparent_background = vim.g.doom_one_transparent_background or false,
 		pumblend = {
 			enable = vim.g.doom_one_pumblend_enable or false,
@@ -280,10 +281,17 @@ doom_one.set_colorscheme = function()
 
 	--- LSP
 	------------
-	set_hl("ErrorMsgUnderline", { fg = palette.red, underline = true })
-	set_hl("WarningMsgUnderline", { fg = palette.yellow, underline = true })
-	set_hl("MoreMsgUnderline", { fg = palette.blue, underline = true })
-	set_hl("MsgUnderline", { fg = palette.green, underline = true })
+	if config.ui.diagnostics_text_color then
+	  set_hl("ErrorMsgUnderline", { fg = palette.red, underline = true })
+	  set_hl("WarningMsgUnderline", { fg = palette.yellow, underline = true })
+	  set_hl("MoreMsgUnderline", { fg = palette.blue, underline = true })
+	  set_hl("MsgUnderline", { fg = palette.green, underline = true })
+	else
+	  set_hl("ErrorMsgUnderline", { sp = palette.red, underline = true })
+	  set_hl("WarningMsgUnderline", { sp = palette.yellow, underline = true })
+	  set_hl("MoreMsgUnderline", { sp = palette.blue, underline = true })
+	  set_hl("MsgUnderline", { sp = palette.green, underline = true })
+	end
 
 	set_hl("LspHighlight", { bg = palette.bg_alt, bold = true })
 	set_hl("LspSignatureActiveParameter", { fg = palette.violet })
