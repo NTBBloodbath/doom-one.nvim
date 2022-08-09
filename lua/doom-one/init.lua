@@ -72,8 +72,8 @@ doom_one.set_colorscheme = function()
 	set_hl("NormalPopupSubtle", { bg = palette.bg_alt, fg = palette.base6 })
 	set_hl("EndOfBuffer", { bg = "bg", fg = "bg" })
 
-	set_hl("Visual", { fg = palette.dark_blue })
-	set_hl("VisualBold", { fg = palette.dark_blue, bold = true })
+	set_hl("Visual", { bg = palette.dark_blue })
+	set_hl("VisualBold", { bg = palette.dark_blue, bold = true })
 
 	set_hl("LineNr", { bg = "bg", fg = palette.grey })
 	set_hl("Cursor", { bg = palette.blue })
@@ -115,7 +115,7 @@ doom_one.set_colorscheme = function()
 		{ bg = palette.blue, fg = dark_theme and palette.base0 or palette.base8, bold = true }
 	)
 	set_hl("PmenuSbar", { bg = palette.bg_alt })
-	set_hl("PmenuThumb", { fg = "fg" })
+	set_hl("PmenuThumb", { bg = palette.grey })
 
 	--- Search, Highlight, Conceal, Messages
 	----------------------------------------
