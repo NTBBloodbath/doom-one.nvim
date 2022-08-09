@@ -291,6 +291,7 @@ doom_one.set_colorscheme = function()
 	set_hl("MsgUnderline", { fg = palette.green, underline = true })
 
 	set_hl("LspHighlight", { bg = palette.bg_alt, bold = true })
+	set_hl("LspSignatureActiveParameter", { fg = palette.violet })
 	set_hl("DiagnosticFloatingError", { link = "ErrorMsg" })
 	set_hl("DiagnosticFloatingWarn", { link = "WarningMsg" })
 	set_hl("DiagnosticFloatingInfo", { link = "MoreMsg" })
