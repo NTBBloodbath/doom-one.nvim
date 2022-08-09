@@ -39,10 +39,6 @@ local config = {
 }
 
 local function set_hl(group, values)
-	vim.validate({
-		{ group = { group, "string" } },
-		{ values = { values, "table" } },
-	})
 	vim.api.nvim_set_hl(0, group, values)
 end
 
@@ -135,7 +131,7 @@ doom_one.set_colorscheme = function()
 	set_hl("Highlight", { bg = palette.bg_alt })
 	set_hl("HighlightSubtle", { link = "Highlight" })
 
-	set_hl("Question", { fg = palette.green, bolf = true })
+	set_hl("Question", { fg = palette.green, bold = true })
 
 	set_hl("File", { fg = "fg" })
 	set_hl("Directory", { fg = palette.violet, bold = true })
@@ -159,7 +155,7 @@ doom_one.set_colorscheme = function()
 
 	for group, hl in pairs(text_colors) do
 		set_hl("Text" .. group, { fg = hl })
-		set_hl("Text" .. group .. "Bold", { fg = hl, gui = true })
+		set_hl("Text" .. group .. "Bold", { fg = hl, bold = true })
 	end
 
 	set_hl("Msg", { link = "TextSuccess" })
