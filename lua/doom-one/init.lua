@@ -486,21 +486,85 @@ doom_one.set_colorscheme = function()
 		set_hl("NeogitUntrackedfiles", { fg = dark_theme and palette.blue or palette.orange, bold = true })
 	end
 
-  if config.plugins.dashboard then
-    set_hl("dashboardHeader", { fg = palette.grey })
-    set_hl("dashboardFooter", { link = "dashboardHeader" })
-    set_hl("dashboardCenter", { fg = dark_theme and palette.blue or palette.orange })
-    set_hl("dashboardShortcut", { fg = palette.violet })
-  end
+	if config.plugins.dashboard then
+		set_hl("dashboardHeader", { fg = palette.grey })
+		set_hl("dashboardFooter", { link = "dashboardHeader" })
+		set_hl("dashboardCenter", { fg = dark_theme and palette.blue or palette.orange })
+		set_hl("dashboardShortcut", { fg = palette.violet })
+	end
 
-  if config.plugins.startify then
-    set_hl("StartifyHeader", { fg = palette.fg_alt })
-    set_hl("StartifyBracket", { fg = palette.grey })
-    set_hl("StartifyNumber", { fg = dark_theme and palette.blue or palette.orange })
-    set_hl("StartifyPath", { fg = palette.violet })
-    set_hl("StartifySlash", { link = "StartifyPath" })
-    set_hl("StartifyFile", { fg = palette.green })
-  end
+	if config.plugins.startify then
+		set_hl("StartifyHeader", { fg = palette.fg_alt })
+		set_hl("StartifyBracket", { fg = palette.grey })
+		set_hl("StartifyNumber", { fg = dark_theme and palette.blue or palette.orange })
+		set_hl("StartifyPath", { fg = palette.violet })
+		set_hl("StartifySlash", { link = "StartifyPath" })
+		set_hl("StartifyFile", { fg = palette.green })
+	end
+
+	if config.plugins.whichkey then
+		set_hl("WhichKey", { fg = dark_theme and palette.blue or palette.red })
+		set_hl("WhichKeyGroup", { fg = palette.magenta })
+		set_hl("WhichKeyDesc", { fg = palette.magenta })
+		set_hl("WhichKeySeparator", { link = "Separator" })
+		set_hl("WhichKeyFloat", { fg = dark_theme and palette.base2 or palette.base6 })
+		set_hl("WhichKeyValue", { fg = palette.grey })
+	end
+
+	if config.plugins.nvim_tree then
+		set_hl("NvimTreeFolderName", { fg = dark_theme and palette.blue or palette.base8, bold = true })
+		set_hl("NvimTreeRootFolder", { fg = palette.green })
+		set_hl("NvimTreeEmptyFolderName", { fg = palette.fg_alt, bold = true })
+		set_hl("NvimTreeSymlink", { fg = "fg", underline = true })
+		set_hl("NvimTreeExecFile", { fg = palette.green, bold = true })
+		set_hl("NvimTreeImageFile", { fg = dark_theme and palette.blue or palette.red })
+		set_hl("NvimTreeOpenedFile", { fg = palette.fg_alt })
+		set_hl("NvimTreeSpecialFile", { fg = "fg", underline = true })
+		set_hl("NvimTreeMarkdownFile", { fg = "fg", underline = true })
+
+		set_hl("NvimTreeGitDirty", { link = "DiffModifiedGutter" })
+		set_hl("NvimTreeGitStaged", { link = "DiffModifiedGutter" })
+		set_hl("NvimTreeGitMerge", { link = "DiffModifiedGutter" })
+		set_hl("NvimTreeGitRenamed", { link = "DiffModifiedGutter" })
+		set_hl("NvimTreeGitNew", { link = "DiffAddedGutter" })
+		set_hl("NvimTreeGitDeleted", { link = "DiffRemovedGutter" })
+
+		set_hl("NvimTreeIndentMarker", { link = "IndentGuide" })
+		set_hl("NvimTreeOpenedFolderName", { link = "NvimTreeFolderName" })
+	end
+
+	if config.plugins.lspsaga then
+		set_hl("SagaShadow", { bg = "bg" })
+		set_hl("LspSagaDiagnosticHeader", { fg = palette.red })
+
+		set_hl("LspSagaDiagnosticBorder", { link = "Normal" })
+		set_hl("LspSagaDiagnosticTruncateLine", { link = "Normal" })
+		set_hl("LspFloatWinBorder", { link = "Normal" })
+		set_hl("LspSagaBorderTitle", { link = "Title" })
+		set_hl("TargetWord", { link = "Error" })
+		set_hl("ReferencesCount", { link = "Title" })
+		set_hl("ReferencesIcon", { link = "Special" })
+		set_hl("DefinitionCount", { link = "Title" })
+		set_hl("TargetFileName", { link = "Comment" })
+		set_hl("DefinitionIcon", { link = "Special" })
+		set_hl("ProviderTruncateLine", { link = "Normal" })
+		set_hl("LspSagaFinderSelection", { link = "Search" })
+		set_hl("DiagnosticTruncateLine", { link = "Normal" })
+		set_hl("DefinitionPreviewTitle", { link = "Title" })
+		set_hl("LspSagaShTruncateLine", { link = "Normal" })
+		set_hl("LspSagaDocTruncateLine", { link = "Normal" })
+		set_hl("LineDiagTuncateLine", { link = "Normal" })
+		set_hl("LspSagaCodeActionTitle", { link = "Title" })
+		set_hl("LspSagaCodeActionTruncateLine", { link = "Normal" })
+		set_hl("LspSagaCodeActionContent", { link = "Normal" })
+		set_hl("LspSagaRenamePromptPrefix", { link = "Normal" })
+		set_hl("LspSagaRenameBorder", { link = "Bold" })
+		set_hl("LspSagaHoverBorder", { link = "Bold" })
+		set_hl("LspSagaSignatureHelpBorder", { link = "Bold" })
+		set_hl("LspSagaCodeActionBorder", { link = "Bold" })
+		set_hl("LspSagaDefPreviewBorder", { link = "Bold" })
+		set_hl("LspLinesDiagBorder", { link = "Bold" })
+	end
 end
 
 return doom_one
