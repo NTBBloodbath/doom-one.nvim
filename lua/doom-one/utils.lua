@@ -32,7 +32,7 @@ end
 -------------------------------------------------------------------------------
 -- Composed functions {{{
 
-M.Lighten = function(color, percentage)
+M.lighten = function(color, percentage)
 	local amount = percentage == nil and 5.0 or percentage
 
 	if amount < 1.0 then
@@ -57,7 +57,7 @@ M.Lighten = function(color, percentage)
 	return hex
 end
 
-M.Darken = function(color, percentage)
+M.darken = function(color, percentage)
 	local amount = percentage == nil and 5.0 or percentage
 
 	if amount < 1.0 then
@@ -90,7 +90,7 @@ local function interpolate(start, _end, amount)
 	return start + (diff * amount)
 end
 
-M.Mix = function(first, second, percentage)
+M.mix = function(first, second, percentage)
 	local amount = percentage == nil and 0.0 or percentage
 
 	local first_rgb = Hex_to_RGB(first)
