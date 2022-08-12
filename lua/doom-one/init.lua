@@ -119,7 +119,7 @@ doom_one.set_colorscheme = function()
 	----------------------------------------
 	set_hl("Search", { bg = palette.dark_blue, fg = "fg" })
 	set_hl("Substitute", { fg = palette.red, bold = true, strikethrough = true })
-	set_hl("IncSearch", { bg = palette.dark_blue, fg = "fg", bold = true })
+	set_hl("IncSearch", { bg = palette.yellow, fg = "bg", bold = true })
 	set_hl("IncSearchCursor", { reverse = true })
 
 	set_hl("Conceal", { fg = palette.grey })
