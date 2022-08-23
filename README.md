@@ -90,6 +90,10 @@ require("headlines").setup({
 })
 ```
 
+##### Neorg buffer with headlines plugin:
+
+![neorg headlines demo](https://user-images.githubusercontent.com/36456999/186283184-c75b3193-9fdc-4e76-9df0-7b2ea2d0059d.png)
+
 ## Extras
 
 Extra color configs for [kitty] can be found in [extras](extras/). To use them,
