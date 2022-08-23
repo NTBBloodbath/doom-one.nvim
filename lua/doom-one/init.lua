@@ -224,7 +224,7 @@ doom_one.set_colorscheme = function()
 		{ fg = dark_theme and utils.lighten(palette.magenta, 0.4) or utils.darken(palette.magenta, 0.36) }
 	)
 	set_hl(
-		"Atrribute",
+		"Attribute",
 		{ fg = dark_theme and utils.lighten(palette.magenta, 0.4) or utils.darken(palette.magenta, 0.36) }
 	)
 	set_hl(
