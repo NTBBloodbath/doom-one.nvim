@@ -13,6 +13,9 @@
 
 This colorscheme is ported from [doom-emacs' doom-one].
 
+> **IMPORTANT**: This colorscheme requires Neovim >= 0.6.x to work!
+
+
 ## Notices
 - `2022-08-08`: doom-one is now using Neovim global variables for configurations again.
   It is using the same configuration options, see [Install](#install).
@@ -23,11 +26,12 @@ This colorscheme is ported from [doom-emacs' doom-one].
 
 ## Features
 
-- Optional terminal colors
-- Optional italic comments
-- Optional TreeSitter support
-- Optional transparent background
-- Optional support for numerous plugins (nvim-tree, barbar, lspsaga, etc)
+- Opt-in italic comments
+- Opt-in terminal colors
+- Opt-in TreeSitter support
+- Opt-in transparent background
+- Opt-in support for numerous plugins (nvim-tree, barbar, lspsaga, etc)
+- Opt-in First class support for [Neorg](https://github.com/nvim-neorg/neorg)
 
 ## Install
 
@@ -72,7 +76,19 @@ use({
 })
 ```
 
-> **IMPORTANT:** this colorscheme requires Neovim >= 0.6 to work.
+#### Neorg support
+
+If you want to get the best neorg look you will surely want to get [headlines.nvim](https://github.com/lukas-reineke/headlines.nvim) plugin.
+
+doom-one already comes with sane defaults for headlines in Neorg buffers. However, you will need a custom configuration to get them working as expected:
+```lua
+require("headlines").setup({
+    norg = {
+        headline_highlights = {"Headline1", "Headline2", "Headline3", "Headline4", "Headline5", "Headline6"},
+        codeblock_highlight = {"NeorgCodeBlock"},
+    }
+})
+```
 
 ## Extras
 
