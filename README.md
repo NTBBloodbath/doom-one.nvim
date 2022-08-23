@@ -103,11 +103,11 @@ refer to their respective documentation.
 
 > Dark variant:
 
-![doom-one](./assets/doom-one.png)
+![dark demo](https://user-images.githubusercontent.com/36456999/186283993-14157f3c-c3b1-4f08-85e8-304018511a3b.png)
 
 > Light variant:
 
-![doom-one-light](./assets/doom-one-light.png)
+![light demo](https://user-images.githubusercontent.com/36456999/186283894-3caa6dd9-d964-4623-8c7d-0328f0e026ea.png)
 
 ## Contribute
 
