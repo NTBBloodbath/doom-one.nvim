@@ -207,7 +207,7 @@ doom_one.set_colorscheme = function()
 	set_hl("Boolean", { fg = palette.orange, bold = true })
 	set_hl("Enum", { fg = palette.orange })
 
-	set_hl("Characer", { fg = palette.violet, bold = true })
+	set_hl("Character", { fg = palette.violet, bold = true })
 	set_hl(
 		"SpecialChar",
 		{ fg = dark_theme and utils.darken(palette.violet, 0.15) or utils.lighten(palette.violet, 0.26), bold = true }
@@ -350,6 +350,7 @@ doom_one.set_colorscheme = function()
 		set_hl("TSKeyword", { link = "Keyword" })
 		set_hl("TSKeywordFunction", { link = "KeywordFunction" })
 		set_hl("TSLabel", { link = "Label" })
+		set_hl("TSMath", { link = "Special" })
 		set_hl("TSMethod", { link = "Method" })
 		set_hl("TSNamespace", { link = "Directory" })
 		set_hl("TSNumber", { link = "Number" })
@@ -419,12 +420,35 @@ doom_one.set_colorscheme = function()
 	if config.plugins.neorg then
 		set_hl("NeorgMarkupVerbatim", { link = "Comment" })
 
+		-- Headers and their prefix icon
+		set_hl("NeorgHeading1Title", { link = "TSAttribute" })
+		set_hl("NeorgHeading2Title", { link = "TSLabel" })
+		set_hl("NeorgHeading3Title", { link = "TSMath" })
+		set_hl("NeorgHeading4Title", { link = "TSString" })
+		set_hl("NeorgHeading5Title", { link = "TSType" })
+		set_hl("NeorgHeading6Title", { link = "TSNumber" })
+		set_hl("NeorgHeading1Prefix", { link = "TSAttribute" })
+		set_hl("NeorgHeading2Prefix", { link = "TSLabel" })
+		set_hl("NeorgHeading3Prefix", { link = "TSMath" })
+		set_hl("NeorgHeading4Prefix", { link = "TSString" })
+		set_hl("NeorgHeading5Prefix", { link = "TSType" })
+		set_hl("NeorgHeading6Prefix", { link = "TSNumber" })
+
 		-- Colors are for nested quotes
 		set_hl("Blue", { fg = palette.blue })
 		set_hl("Yellow", { fg = palette.yellow })
 		set_hl("Red", { fg = palette.red })
 		set_hl("Green", { fg = palette.green })
 		set_hl("Brown", { fg = palette.orange })
+
+    -- Headlines support
+    -- NOTE: requires custom highlight groups in headlines setup!
+    set_hl("Headline1", { bg = utils.blend(utils.get_hl("NeorgHeading1Title", "foreground"), palette.bg, 0.18) })
+    set_hl("Headline2", { bg = utils.blend(utils.get_hl("NeorgHeading2Title", "foreground"), palette.bg, 0.18) })
+    set_hl("Headline3", { bg = utils.blend(utils.get_hl("NeorgHeading3Title", "foreground"), palette.bg, 0.18) })
+    set_hl("Headline4", { bg = utils.blend(utils.get_hl("NeorgHeading4Title", "foreground"), palette.bg, 0.18) })
+    set_hl("Headline5", { bg = utils.blend(utils.get_hl("NeorgHeading5Title", "foreground"), palette.bg, 0.18) })
+    set_hl("Headline6", { bg = utils.blend(utils.get_hl("NeorgHeading6Title", "foreground"), palette.bg, 0.18) })
 	end
 
 	if config.plugins.vim_illuminate then
