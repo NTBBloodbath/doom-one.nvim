@@ -1,0 +1,54 @@
+doom_light: &doom_light
+  primary:
+    foreground: '#383a42'
+    background: '#fafafa'
+  cursor:
+    cursor: '#4078f2'
+    text: '#fafafa'
+  normal:
+    black: '#fafafa'
+    red: '#e45649'
+    green: '#50a14f'
+    yellow: '#986801'
+    blue: '#4078f2'
+    magenta: '#b751b6'
+    cyan: '#0184bc'
+    white: '#383a42'
+  bright:
+    black: '#9ca0a4'
+    red: '#e45649'
+    green: '#50a14f'
+    yellow: '#da8548'
+    blue: '#4078f2'
+    magenta: '#b751b6'
+    cyan: '#0184bc'
+    white: '#efefef'
+
+doom_dark: &doom_dark
+  primary:
+    foreground: '#bbc2cf'
+    background: "#282c34"
+  cursor:
+    cursor: '#51afef'
+    text: '#282c34'
+  normal:
+    black: "#282c34"
+    red: "#ff6c6b"
+    green: "#98be65"
+    yellow: "#ecbe7b"
+    blue: "#51afef"
+    magenta: "#a9a1e1"
+    cyan: "#46d9ff"
+    white: "#bbc2cf"
+  bright:
+    black: "#3f444a"
+    red: "#ff6c6b"
+    green: "#98be65"
+    yellow: "#da8548"
+    blue: "#51afef"
+    magenta: "#a9a1e1"
+    cyan: "#46d9ff"
+    white: "#efefef"
+
+# Apply
+colors: *doom_dark
