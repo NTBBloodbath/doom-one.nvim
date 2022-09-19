@@ -45,6 +45,17 @@ end
 
 -- }}}
 
+doom_one.setup = function(opts)
+  opts = opts or {}
+  if opts.colors then
+    for mode, color_override in pairs(opts.colors) do
+      for color, value in pairs(color_override) do
+        colors[mode][color]=value
+      end
+    end
+  end
+end
+
 -- TODO: Re-add plugins integration here
 doom_one.set_colorscheme = function()
 	-- Set UI options
