@@ -8,34 +8,35 @@
 
 local doom_one = {}
 
+local if_nil = vim.F.if_nil
 local utils = require("doom-one.utils")
 local colors = require("doom-one.colors")
 
 local config = {
 	ui = {
-		cursor_coloring = vim.g.doom_one_cursor_coloring or false,
-		terminal_colors = vim.g.doom_one_terminal_colors or true,
-		italic_comments = vim.g.doom_one_italic_comments or false,
-		enable_treesitter = vim.g.doom_one_enable_treesitter or true,
-		diagnostics_text_color = vim.g.doom_one_diagnostics_text_color or false,
-		transparent_background = vim.g.doom_one_transparent_background or false,
+		cursor_coloring = if_nil(vim.g.doom_one_cursor_coloring, false),
+		terminal_colors = if_nil(vim.g.doom_one_terminal_colors, true),
+		italic_comments = if_nil(vim.g.doom_one_italic_comments, false),
+		enable_treesitter = if_nil(vim.g.doom_one_enable_treesitter, true),
+		diagnostics_text_color = if_nil(vim.g.doom_one_diagnostics_text_color, false),
+		transparent_background = if_nil(vim.g.doom_one_transparent_background, false),
 		pumblend = {
-			enable = vim.g.doom_one_pumblend_enable or false,
-			transparency_amount = vim.g.doom_one_pumblend_transparency or 20,
+			enable = if_nil(vim.g.doom_one_pumblend_enable, false),
+			transparency_amount = if_nil(vim.g.doom_one_pumblend_transparency, 20),
 		},
 	},
 	plugins = {
-		neorg = vim.g.doom_one_plugin_neorg or true,
-		barbar = vim.g.doom_one_plugin_barbar or false,
-		telescope = vim.g.doom_one_plugin_telescope or false,
-		neogit = vim.g.doom_one_plugin_neogit or true,
-		nvim_tree = vim.g.doom_one_plugin_nvim_tree or true,
-		dashboard = vim.g.doom_one_plugin_dashboard or true,
-		startify = vim.g.doom_one_plugin_startify or true,
-		whichkey = vim.g.doom_one_plugin_whichkey or true,
-		indent_blankline = vim.g.doom_one_plugin_indent_blankline or true,
-		vim_illuminate = vim.g.doom_one_plugin_vim_illuminate or true,
-		lspsaga = vim.g.doom_one_plugin_lspsaga or false,
+		neorg = if_nil(vim.g.doom_one_plugin_neorg, true),
+		barbar = if_nil(vim.g.doom_one_plugin_barbar, false),
+		telescope = if_nil(vim.g.doom_one_plugin_telescope, false),
+		neogit = if_nil(vim.g.doom_one_plugin_neogit, true),
+		nvim_tree = if_nil(vim.g.doom_one_plugin_nvim_tree, true),
+		dashboard = if_nil(vim.g.doom_one_plugin_dashboard, true),
+		startify = if_nil(vim.g.doom_one_plugin_startify, true),
+		whichkey = if_nil(vim.g.doom_one_plugin_whichkey, true),
+		indent_blankline = if_nil(vim.g.doom_one_plugin_indent_blankline, true),
+		vim_illuminate = if_nil(vim.g.doom_one_plugin_vim_illuminate, true),
+		lspsaga = if_nil(vim.g.doom_one_plugin_lspsaga, false),
 	},
 }
 
