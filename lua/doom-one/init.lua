@@ -139,7 +139,7 @@ doom_one.set_colorscheme = function()
 	set_hl("Title", { fg = palette.violet, bold = true })
 
 	set_hl("Bold", { bold = true })
-	set_hl("Emphasis", { underline = true })
+	set_hl("Emphasis", { italic = true })
 
 	--- Text Levels
 	---------------
