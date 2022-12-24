@@ -139,7 +139,7 @@ doom_one.set_colorscheme = function()
 	set_hl("Title", { fg = palette.violet, bold = true })
 
 	set_hl("Bold", { bold = true })
-	set_hl("Emphasis", { fg = palette.green, bold = true })
+	set_hl("Emphasis", { underline = true })
 
 	--- Text Levels
 	---------------
@@ -327,19 +327,14 @@ doom_one.set_colorscheme = function()
 	--- Tree-Sitter
 	---------------
 	if config.ui.enable_treesitter then
-		set_hl("TSStrike", {
-			fg = dark_theme and utils.darken(palette.violet, 0.2) or utils.lighten(palette.violet, 0.26),
-			strikethrough = true,
-		})
-
 		set_hl("@annotation", { link = "PreProc" })
 		set_hl("@attribute", { link = "Attribute" })
 		set_hl("@conditional", { link = "Conditional" })
 		set_hl("@comment", { link = "Comment" })
 		set_hl("@constructor", { link = "Structure" })
 		set_hl("@constant", { link = "Constant" })
-		set_hl("@constBuiltin", { link = "Constant" })
-		set_hl("@constMacro", { link = "Macro" })
+		set_hl("@constant.builtin", { link = "Constant" })
+		set_hl("@constant.macro", { link = "Macro" })
 		set_hl("@error", { link = "Error" })
 		set_hl("@exception", { link = "Exception" })
 		set_hl("@field", { link = "Field" })
@@ -355,6 +350,7 @@ doom_one.set_colorscheme = function()
 		set_hl("@method", { link = "Method" })
 		set_hl("@namespace", { link = "Directory" })
 		set_hl("@number", { link = "Number" })
+		set_hl("@boolean", { link = "Boolean" })
 		set_hl("@operator", { link = "Operator" })
 		set_hl("@parameter", { link = "Argument" })
 		set_hl("@parameter.reference", { link = "Argument" })
@@ -368,6 +364,7 @@ doom_one.set_colorscheme = function()
 		set_hl("@string.escape", { link = "StringDelimiter" })
 		set_hl("@structure", { link = "Structure" })
 		set_hl("@tag", { link = "Tag" })
+		set_hl("@tag.attribute", { link = "Attribute" })
 		set_hl("@tag.delimiter", { link = "Delimiter" })
 		set_hl("@strong", { link = "Bold" })
 		set_hl("@uri", { link = "URL" })
@@ -378,6 +375,20 @@ doom_one.set_colorscheme = function()
 		set_hl("@variable", { link = "None" })
 		set_hl("@variable.builtin", { link = "VariableBuiltin" })
 		set_hl("@query.linter.error", { fg = palette.fg })
+		set_hl("@text", { link = "TextNormal" })
+		set_hl("@text.strong", { link = "TextNormalBold" })
+		set_hl("@text.emphasis", { link = "Emphasis" })
+		set_hl("@text.underline", { underline = true })
+		set_hl("@text.strike", {
+			fg = dark_theme and utils.darken(palette.violet, 0.2) or utils.lighten(palette.violet, 0.26),
+			strikethrough = true,
+		})
+		set_hl("@text.title", { link = "Title" })
+		set_hl("@text.uri", { link = "URL" })
+		set_hl("@text.note", { link = "TextInfo" })
+		set_hl("@text.warning", { link = "TextWarning" })
+		set_hl("@text.danger", { link = "TextError" })
+		set_hl("@todo", { link = "Todo" })
 	end
 
 	--- NetRW
