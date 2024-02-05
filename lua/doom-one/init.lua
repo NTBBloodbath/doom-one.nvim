@@ -80,7 +80,7 @@ doom_one.set_colorscheme = function()
 	set_hl("LineNr", { bg = "bg", fg = palette.blue })
 	set_hl("Cursor", { bg = palette.blue })
 	set_hl("CursorLine", { bg = palette.bg_alt })
-	set_hl("CursorLineNr", { bg = palette.bg_alt, fg = palette='orange' })
+	set_hl("CursorLineNr", { bg = palette.bg_alt, fg = palette.orange })
 	set_hl("CursorColumn", { bg = palette.bg_alt })
 
 	set_hl("Folded", { bg = palette.bg_alt, fg = palette.base5 })
