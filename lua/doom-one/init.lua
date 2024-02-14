@@ -417,7 +417,7 @@ doom_one.set_colorscheme = function()
 		vim.g.terminal_color_12 = palette.blue
 		vim.g.terminal_color_13 = palette.violet
 		vim.g.terminal_color_14 = palette.cyan
-		vim.g.terminal_color_15 = palette.white
+		vim.g.terminal_color_15 = palette.base8
 		vim.g.terminal_color_background = palette.bg_alt
 		vim.g.terminal_color_foreground = palette.fg_alt
 	end
