@@ -25,7 +25,7 @@ local colors = {
 
 		grey = "#3f444a",
 		red = "#ec675d",
-		orange = "#da8548",
+		orange = "#cae797",
 		green = "#ffcd85",
 		teal = "#4db5bd",
 		yellow = "#f0f1f0",
