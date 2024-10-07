@@ -32,7 +32,7 @@ local colors = {
 		blue = "#75c4f9",
 		dark_blue = "#2257a0",
 		magenta = "#fae4a3",
-		violet = "#eeeeee",
+		violet = "#ffffff",
 		cyan = "#65a9d6",
 		dark_cyan = "#5699af",
   },
