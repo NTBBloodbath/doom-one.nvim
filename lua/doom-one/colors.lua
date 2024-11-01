@@ -23,7 +23,7 @@ local colors = {
 		base7 = "#9ca0a4",
 		base8 = "#dfdfdf",
 
-		grey = "#ffdaf7",
+		grey = "#ffffff",
 		red = "#ef8bb6",   
 		orange = "#ffdaf7",
 		green = "#e9a4b7",
