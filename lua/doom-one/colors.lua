@@ -11,7 +11,7 @@ local colors = {
     fg = "#ffffff",
 
     bg_alt = "#141919",
-    fg_alt = "#5b6268",
+    fg_alt = "#ffffff",
 
 		base0 = "#1b2229",
 		base1 = "#1c1e1e",
