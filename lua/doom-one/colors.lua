@@ -7,10 +7,10 @@
 
 local colors = {
   dark = {
-    bg = "#191919",
+    bg = "#141414",
     fg = "#ffffff",
 
-    bg_alt = "#191919",
+    bg_alt = "#141414",
     fg_alt = "#ffffff",
 
 		base0 = "#1b2229",
