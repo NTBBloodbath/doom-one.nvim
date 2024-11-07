@@ -7,7 +7,7 @@
 
 local colors = {
   dark = {
-    bg = "#141414",
+    bg = "#101212",
     fg = "#ffffff",
 
     bg_alt = "#141414",
@@ -25,13 +25,13 @@ local colors = {
 
 		grey = "#ffffff",
 		red = "#ff7bb4",   
-		orange = "#ffdaf7",
-		green = "#ffadc3",
-		teal = "#ffe8ab",
-		yellow = "#c8c8c8",
-		blue = "#addcfe",
+		orange = "#ffadef",
+		green = "#ff759b",
+		teal = "#fae4a3",
+		yellow = "#bbbbbb",
+		blue = "#6fc5ff",
 		dark_blue = "#2257a0",
-		magenta = "#ffedba",
+		magenta = "#f5e2b5",
 		violet = "#ffffff",
 		cyan = "#3cb1ff",
 		dark_cyan = "#5699af",
