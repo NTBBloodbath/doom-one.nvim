@@ -1,0 +1,28 @@
+#add this lines on ~/.config/lazygit/config.yml
+gui:
+  nerdFontsVersion: "3"
+  theme:
+    activeBorderColor:
+      - "#46d9ff"
+      - "bold"
+    inactiveBorderColor:
+      - "#5b6268"
+    searchingActiveBorderColor:
+      - "#46d9ff"
+      - "bold"
+    optionsTextColor:
+      - "#3071db"
+    selectedLineBgColor:
+      - "#282c34"
+    cherryPickedCommitFgColor:
+      - "#3071db"
+    cherryPickedCommitBgColor:
+      - "#ff6c6b"
+    markedBaseCommitFgColor:
+      - "#3071db"
+    markedBaseCommitBgColor:
+      - "#da8548"
+    unstagedChangesColor:
+      - "#ff6c6b"
+    defaultFgColor:
+      - "#bbc2cf"
