@@ -39,7 +39,7 @@ Lazy
 ```lua
 return {
     'NTBBloodbath/doom-one.nvim',
-    opts = {
+    config = function()
         -- Add color to cursor
 		vim.g.doom_one_cursor_coloring = false
 		-- Set :terminal colors
@@ -69,7 +69,7 @@ return {
 		vim.g.doom_one_plugin_indent_blankline = true
 		vim.g.doom_one_plugin_vim_illuminate = true
 		vim.g.doom_one_plugin_lspsaga = false
-    }
+    end
 }
 ```
 
