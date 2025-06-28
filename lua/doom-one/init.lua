@@ -627,4 +627,19 @@ doom_one.set_colorscheme = function()
 	end
 end
 
+local function merge_tables(dest, src)
+    for k, v in pairs(src) do
+        if type(k) == "table" and type(v) == "table" then
+          merge_tables(dest[k], v)
+        end
+        dest[k] = v
+      end
+end
+
+doom_one.setup = function(opts)
+    merge_tables(config.ui, opts.ui)
+    merge_tables(config.plugins, opts.plugins)
+    doom_one.set_colorscheme()
+end
+
 return doom_one
