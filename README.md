@@ -52,6 +52,8 @@ return {
         vim.g.doom_one_diagnostics_text_color = false
 		-- Enable transparent background
 		vim.g.doom_one_transparent_background = false
+        -- Color current line if relative line number is true, See: vim.opt.relativenumber
+        vim.g.doom_one_relative_line_color = true
 
         -- Pumblend transparency
 		vim.g.doom_one_pumblend_enable = false
