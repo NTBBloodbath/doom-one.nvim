@@ -20,6 +20,7 @@ local config = {
 		enable_treesitter = if_nil(vim.g.doom_one_enable_treesitter, true),
 		diagnostics_text_color = if_nil(vim.g.doom_one_diagnostics_text_color, false),
 		transparent_background = if_nil(vim.g.doom_one_transparent_background, false),
+    relative_line_color = if_nil(vim.g.doom_one_relative_line_color, false),
 		pumblend = {
 			enable = if_nil(vim.g.doom_one_pumblend_enable, false),
 			transparency_amount = if_nil(vim.g.doom_one_pumblend_transparency, 20),
@@ -412,6 +413,15 @@ doom_one.set_colorscheme = function()
 	set_hl("netrwExe", { fg = palette.green, bold = true })
 	set_hl("netrwMakefile", { fg = palette.yellow, bold = true })
 	set_hl("netrwTreeBar", { link = "Comment" })
+
+  --- Relative line color for rln
+	-------------------
+	if config.ui.relative_line_color then
+    set_hl("LineNr", { bg = config.ui.transparent_background and "NONE" or palette.bg, fg = palette.cyan })
+    set_hl("LineNrAbove", { bg = config.ui.transparent_background and "NONE" or palette.bg, fg = palette.grey })
+    set_hl("LineNrBelow", { bg = config.ui.transparent_background and "NONE" or palette.bg, fg = palette.grey })
+	end
+
 
 	--- Terminal colors
 	-------------------
