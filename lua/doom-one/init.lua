@@ -528,10 +528,28 @@ doom_one.set_colorscheme = function()
 	end
 
 	if config.plugins.neogit then
-		set_hl("NeogitDiffAdd", { bg = "#e9f1e8", fg = "#40803f" })
-		set_hl("NeogitDiffAddHighlight", { bg = "#d8e8d7", fg = palette.green, bold = true })
-		set_hl("NeogitDiffDelete", { bg = "#f7e9e8", fg = "#cc5655" })
-		set_hl("NeogitDiffDeleteHighlight", { bg = "#f5d9d6", fg = palette.red, bold = true })
+		-- Neogit keeps highlight groups that are already set, so the
+		-- light-theme values below would otherwise leak into dark
+		-- backgrounds. The dark values match Neogit's defaults for these
+		-- groups (derived from String/ErrorMsg).
+		set_hl("NeogitDiffAdd", {
+			bg = dark_theme and "#31352b" or "#e9f1e8",
+			fg = dark_theme and "#7d9c53" or "#40803f",
+		})
+		set_hl("NeogitDiffAddHighlight", {
+			bg = dark_theme and "#31352b" or "#d8e8d7",
+			fg = palette.green,
+			bold = true,
+		})
+		set_hl("NeogitDiffDelete", {
+			bg = dark_theme and "#663d3d" or "#f7e9e8",
+			fg = dark_theme and "#d15958" or "#cc5655",
+		})
+		set_hl("NeogitDiffDeleteHighlight", {
+			bg = dark_theme and "#663d3d" or "#f5d9d6",
+			fg = palette.red,
+			bold = true,
+		})
 		set_hl("NeogitDiffContext", { bg = config.ui.transparent_background and "NONE" or palette.bg, fg = palette.fg_alt })
 		set_hl("NeogitDiffContextHighlight", { bg = palette.bg_alt, fg = palette.fg, bold = true })
 		set_hl(
